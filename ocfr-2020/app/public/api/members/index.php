@@ -9,14 +9,21 @@ $db = DbConnection::getConnection();
 $sql = 'SELECT * FROM person';
 $vars = [];
 
+if (isset($_GET['empID'])) {
+//   // This is an example of a parameterized query
+$sql = 'SELECT * FROM person WHERE empID = ?';
+$vars = [ $_GET['empID'] ];
+}
+
+
 
 $stmt = $db->prepare($sql);
 $stmt->execute($vars);
 
-$users = $stmt->fetchAll();
+$ptList = $stmt->fetchAll();
 
 // Step 3: Convert to JSON
-$json = json_encode($users, JSON_PRETTY_PRINT);
+$json = json_encode($ptList, JSON_PRETTY_PRINT);
 
 // Step 4: Output
 header('Content-Type: application/json');
