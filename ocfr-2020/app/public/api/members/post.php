@@ -29,7 +29,7 @@ $stmt->execute([
   $_POST['fname'],
   $_POST['lname'],
   $_POST['address'],
-  $_POST['mobilePhone']
+  $_POST['mobilePhone'],
   $_POST['workPhone'],
   $_POST['email'],
   $_POST['dob'],
@@ -53,4 +53,3 @@ $stmt->execute([
 header('HTTP/1.1 303 See Other');
 
 header('Location: ../members/?empID=' . $empID);
-

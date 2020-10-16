@@ -2,14 +2,36 @@ waitingApp = new Vue({
   el: '#cardPaneLeft',
   data:{
     ptList: [{
-      firstName: '',
-      lastName: '',
-      userId: ''
+      fname: '',
+      lname: '',
+      address: '',
+      mobilePhone: '',
+      workPhone: '',
+      email: '',
+      dob: '',
+      startDate: '',
+      gender: '',
+      position: '',
+      radioNum: '',
+      stationNum: '',
+      active: '',
+      certifications: ''
     }],
       newPTForm: {
-        firstName:'',
-        lastName:'',
-        userId:''
+        fname: '',
+        lname: '',
+        address: '',
+        mobilePhone: '',
+        workPhone: '',
+        email: '',
+        dob: '',
+        startDate: '',
+        gender: '',
+        position: '',
+        radioNum: '',
+        stationNum: '',
+        active: '',
+        certifications: ''
       }
   },
   methods:{
@@ -18,11 +40,11 @@ waitingApp = new Vue({
       .then(response => response.json())
       .then(json => {
         this.ptList=json;
-        console.log(this.users);
+        console.log(this.ptList);
       });
     },
     createUser(){
-      this.newPTForm.userID = (this.newPTForm.firstName.substring(0,1)+this.newPTForm.lastName).toLowerCase();
+      this.newPTForm.userID = (this.newPTForm.fname.substring(0,1)+this.newPTForm.lname).toLowerCase();
       fetch('api/members/post.php', {
         method:'POST',
         body: JSON.stringify(this.newUser),
@@ -41,9 +63,20 @@ waitingApp = new Vue({
     },
     newUserData() {
       return {
-        firstName: "",
-        lastName: "",
-        userID: ""
+        fname: '',
+        lname: '',
+        address: '',
+        mobilePhone: '',
+        workPhone: '',
+        email: '',
+        dob: '',
+        startDate: '',
+        gender: '',
+        position: '',
+        radioNum: '',
+        stationNum: '',
+        active: '',
+        certifications: ''
       }
     }
   },
