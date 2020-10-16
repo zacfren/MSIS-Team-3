@@ -7,4 +7,4 @@ services:
     volumes:
       - .app/public/index.html
     env_file:
-      - .docker/env
+      - docker/env
