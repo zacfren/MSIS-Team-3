@@ -36,7 +36,7 @@ waitingApp = new Vue({
   },
   methods:{
     fetchUser(){
-      fetch('./api/members/index.php')
+      fetch('api/members/')
       .then(response => response.json())
       .then(json => {
         this.ptList=json;
