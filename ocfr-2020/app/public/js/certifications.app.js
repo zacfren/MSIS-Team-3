@@ -2,41 +2,20 @@ waitingApp = new Vue({
   el: '#cardPaneLeft',
   data:{
     ptList: [{
-      fname: '',
-      lname: '',
-      address: '',
-      mobilePhone: '',
-      workPhone: '',
-      email: '',
-      dob: '',
-      startDate: '',
-      gender: '',
-      position: '',
-      radioNum: '',
-      stationNum: '',
-      active: '',
-      certifications: ''
+      agency: '',
+      certificationName: '',
+      expDate: '',
     }],
       newPTForm: {
-        fname: '',
-        lname: '',
-        address: '',
-        mobilePhone: '',
-        workPhone: '',
-        email: '',
-        dob: '',
-        startDate: '',
-        gender: '',
-        position: '',
-        radioNum: '',
-        stationNum: '',
-        active: '',
-        certifications: ''
+        agency: '',
+        certificationName: '',
+        expDate: '',
       }
   },
   methods:{
+    //get api
     fetchUser(){
-      fetch('api/members/')
+      fetch('api/certifications/')
       .then(response => response.json())
       .then(json => {
         this.ptList=json;
@@ -44,8 +23,8 @@ waitingApp = new Vue({
       });
     },
     createUser(){
-      this.newPTForm.userID = (this.newPTForm.fname.substring(0,1)+this.newPTForm.lname).toLowerCase();
-      fetch('api/members/post.php', {
+      this.newPTForm.userID = (this.newPTForm.agency.substring(0,1)+this.newPTForm.lname).toLowerCase();
+      fetch('api/certifications/post.php', {
         method:'POST',
         body: JSON.stringify(this.newUser),
         headers: {
@@ -55,7 +34,7 @@ waitingApp = new Vue({
       .then( response => response.json() )
       .then( json => {
         console.log("Returned from post:", json);
-        this.PtList.push(json[0]);
+        this.ptList.push(json[0]);
         this.newPTForm = this.newUserData();
       });
       console.log("Creating (POSTing)...I");
