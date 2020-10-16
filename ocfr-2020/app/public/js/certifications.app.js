@@ -1,12 +1,12 @@
 waitingApp = new Vue({
   el: '#cardPaneLeft',
   data:{
-    certList: [{
+    ptList: [{
       agency: '',
       certificationName: '',
       expDate: '',
     }],
-      newcertForm: {
+      newPTForm: {
         agency: '',
         certificationName: '',
         expDate: '',
@@ -23,7 +23,7 @@ waitingApp = new Vue({
       });
     },
     createUser(){
-      this.newPTForm.userID = (this.newPTForm.fname.substring(0,1)+this.newPTForm.lname).toLowerCase();
+      this.newPTForm.userID = (this.newPTForm.agency.substring(0,1)+this.newPTForm.lname).toLowerCase();
       fetch('api/certifications/post.php', {
         method:'POST',
         body: JSON.stringify(this.newUser),
