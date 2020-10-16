@@ -2,12 +2,12 @@ waitingApp = new Vue({
   el: '#cardPaneLeft',
   data:{
     ptList: [{
-      firstName: 'PrestonFirstName',
+      firstName: '',
       lastName: '',
       userId: ''
     }],
       newPTForm: {
-        firstName:'PrestonNewFirstName',
+        firstName:'',
         lastName:'',
         userId:''
       }
@@ -22,8 +22,8 @@ waitingApp = new Vue({
       });
     },
     createUser(){
-      this.newUser.userID = (this.newUser.firstName.substring(0,1)+this.newUser.lastName).toLowerCase();
-      fetch('api/users/insertusers.php', {
+      this.newPTForm.userID = (this.newPTForm.firstName.substring(0,1)+this.newPTForm.lastName).toLowerCase();
+      fetch('api/members/post.php', {
         method:'POST',
         body: JSON.stringify(this.newUser),
         headers: {
@@ -33,11 +33,11 @@ waitingApp = new Vue({
       .then( response => response.json() )
       .then( json => {
         console.log("Returned from post:", json);
-        this.users.push(json[0]);
-        this.newUser = this.newUserData();
+        this.PtList.push(json[0]);
+        this.newPTForm = this.newUserData();
       });
       console.log("Creating (POSTing)...I");
-      console.log(this.newUser);
+      console.log(this.newPTForm);
     },
     newUserData() {
       return {
