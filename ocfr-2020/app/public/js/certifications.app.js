@@ -1,7 +1,7 @@
 waitingApp = new Vue({
   el: '#cardPaneLeft',
   data:{
-    ptList: [{
+    certList: [{
       fname: '',
       lname: '',
       address: '',
@@ -35,8 +35,9 @@ waitingApp = new Vue({
       }
   },
   methods:{
+    //get api
     fetchUser(){
-      fetch('api/members/')
+      fetch('api/certifications/')
       .then(response => response.json())
       .then(json => {
         this.ptList=json;
@@ -45,7 +46,7 @@ waitingApp = new Vue({
     },
     createUser(){
       this.newPTForm.userID = (this.newPTForm.fname.substring(0,1)+this.newPTForm.lname).toLowerCase();
-      fetch('api/members/post.php', {
+      fetch('api/certifications/post.php', {
         method:'POST',
         body: JSON.stringify(this.newUser),
         headers: {
