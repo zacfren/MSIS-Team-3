@@ -2,14 +2,36 @@ waitingApp = new Vue({
   el: '#cardPaneLeft',
   data:{
     ptList: [{
-      firstName: 'PrestonFirstName',
-      lastName: '',
-      userId: ''
+      fname: '',
+      lname: '',
+      address: '',
+      mobilePhone: '',
+      workPhone: '',
+      email: '',
+      dob: '',
+      startDate: '',
+      gender: '',
+      position: '',
+      radioNum: '',
+      stationNum: '',
+      active: '',
+      certifications: ''
     }],
       newPTForm: {
-        firstName:'PrestonNewFirstName',
-        lastName:'',
-        userId:''
+        fname: '',
+        lname: '',
+        address: '',
+        mobilePhone: '',
+        workPhone: '',
+        email: '',
+        dob: '',
+        startDate: '',
+        gender: '',
+        position: '',
+        radioNum: '',
+        stationNum: '',
+        active: '',
+        certifications: ''
       }
   },
   methods:{
@@ -18,12 +40,12 @@ waitingApp = new Vue({
       .then(response => response.json())
       .then(json => {
         this.ptList=json;
-        console.log(this.users);
+        console.log(this.ptList);
       });
     },
     createUser(){
-      this.newUser.userID = (this.newUser.firstName.substring(0,1)+this.newUser.lastName).toLowerCase();
-      fetch('api/users/insertusers.php', {
+      this.newPTForm.userID = (this.newPTForm.fname.substring(0,1)+this.newPTForm.lname).toLowerCase();
+      fetch('api/members/post.php', {
         method:'POST',
         body: JSON.stringify(this.newUser),
         headers: {
@@ -33,17 +55,28 @@ waitingApp = new Vue({
       .then( response => response.json() )
       .then( json => {
         console.log("Returned from post:", json);
-        this.users.push(json[0]);
-        this.newUser = this.newUserData();
+        this.PtList.push(json[0]);
+        this.newPTForm = this.newUserData();
       });
       console.log("Creating (POSTing)...I");
-      console.log(this.newUser);
+      console.log(this.newPTForm);
     },
     newUserData() {
       return {
-        firstName: "",
-        lastName: "",
-        userID: ""
+        fname: '',
+        lname: '',
+        address: '',
+        mobilePhone: '',
+        workPhone: '',
+        email: '',
+        dob: '',
+        startDate: '',
+        gender: '',
+        position: '',
+        radioNum: '',
+        stationNum: '',
+        active: '',
+        certifications: ''
       }
     }
   },
