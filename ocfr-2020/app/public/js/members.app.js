@@ -36,7 +36,7 @@ waitingApp = new Vue({
   },
   methods:{
     fetchUser(){
-      fetch('./api/members/')
+      fetch('./api/members/index.php')
       .then(response => response.json())
       .then(json => {
         this.ptList=json;
@@ -45,7 +45,7 @@ waitingApp = new Vue({
     },
     createUser(){
       this.newPTForm.empID = (this.newPTForm.fname.substring(0,1)+this.newPTForm.lname).toLowerCase();
-      fetch('api/members/post.php', {
+      fetch('./api/members/post.php', {
         method:'POST',
         body: JSON.stringify(this.person),
         headers: {
