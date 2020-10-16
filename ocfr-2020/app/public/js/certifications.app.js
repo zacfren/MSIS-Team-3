@@ -2,36 +2,14 @@ waitingApp = new Vue({
   el: '#cardPaneLeft',
   data:{
     certList: [{
-      fname: '',
-      lname: '',
-      address: '',
-      mobilePhone: '',
-      workPhone: '',
-      email: '',
-      dob: '',
-      startDate: '',
-      gender: '',
-      position: '',
-      radioNum: '',
-      stationNum: '',
-      active: '',
-      certifications: ''
+      agency: '',
+      certificationName: '',
+      expDate: '',
     }],
-      newPTForm: {
-        fname: '',
-        lname: '',
-        address: '',
-        mobilePhone: '',
-        workPhone: '',
-        email: '',
-        dob: '',
-        startDate: '',
-        gender: '',
-        position: '',
-        radioNum: '',
-        stationNum: '',
-        active: '',
-        certifications: ''
+      newcertForm: {
+        agency: '',
+        certificationName: '',
+        expDate: '',
       }
   },
   methods:{
