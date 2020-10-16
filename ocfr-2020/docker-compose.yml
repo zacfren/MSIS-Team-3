@@ -3,7 +3,7 @@ services:
   phptriage:
     build: .
     ports:
-      - "8888:80"
+      - "8080:80"
     volumes:
       - app/public/index.html
     env_file:
