@@ -17,7 +17,7 @@ waitingApp = new Vue({
       active: '',
       certifications: ''
     }],
-      newPTForm: {
+      newPtForm: {
         fname: '',
         lname: '',
         address: '',
@@ -44,7 +44,7 @@ waitingApp = new Vue({
       });
     },
     createUser(){
-      this.newPTForm.empID = (this.newPTForm.fname.substring(0,1)+this.newPTForm.lname).toLowerCase();
+      this.newPtForm.empID = (this.newPtForm.fname.substring(0,1)+this.newPtForm.lname).toLowerCase();
       fetch('./api/members/post.php', {
         method:'POST',
         body: JSON.stringify(this.person),
@@ -56,10 +56,10 @@ waitingApp = new Vue({
       .then( json => {
         console.log("Returned from post:", json);
         this.PtList.push(json[0]);
-        this.newPTForm = this.newUserData();
+        this.newPtForm = this.newUserData();
       });
       console.log("Creating (POSTing)...I");
-      console.log(this.newPTForm);
+      console.log(this.newPtForm);
     },
     newUserData() {
       return {
