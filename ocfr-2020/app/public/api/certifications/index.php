@@ -9,11 +9,11 @@ $db = DbConnection::getConnection();
 $sql = 'SELECT * FROM certification';
 $vars = [];
 
-// if (isset($_GET['ID'])) {
-//   // This is an example of a parameterized query
-//   $sql = 'SELECT * FROM certification WHERE certificationID = ?';
-//   $vars = [ $_GET['ID'] ];
-// }
+ if (isset($_GET['certificationID'])) {
+   // This is an example of a parameterized query
+   $sql = 'SELECT * FROM certification WHERE certificationID = ?';
+   $vars = [ $_GET['certificationID'] ];
+ }
 
 $stmt = $db->prepare($sql);
 $stmt->execute($vars);

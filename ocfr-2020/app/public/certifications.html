@@ -39,6 +39,16 @@
     <div class="container-fluid">
         <div class="row" id="triagePage">
           <div id="cardPaneLeft" class="col cardPane cardPaneLeft">
+            <div class="certification" v-for="certification in certification">
+              <span class="certificationID"> Certification ID: {{ certification.certificationID }}</span>,<br/>
+              <span class="agency"> Certification Agency: {{ certification.agency }}</span>,<br/>
+              <span class="certificationName">Certification Name: {{certification.certificationName }}</span>,<br/>
+              <span class="expDate">Expiration Period: {{certification.expDate }}</span>
+            </div><br/>
+
+    <div class="container-fluid">
+        <div class="row" id="triagePage">
+          <div id="cardPaneLeft" class="col cardPane cardPaneLeft">
             <form method="post" v-on:submit.prevent="createCert()">
               <h3>Add New Certification</h3>
 
