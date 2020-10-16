@@ -126,20 +126,20 @@
             <h3>List of All Members</h3>
 
             <div class="patientCard" v-for="pt in ptList" v-on:click="activePt = pt">
-              <span class="firstName">{{ pt.firstName }}</span>
-              <span class="lastName">{{ pt.lastName }}</span>
-              <span class="address">{{ pt.address }}</span>
-              <span class="mobilePhone">{{ pt.mobilePhone }}</span>
-              <span class="workPhone">{{ pt.workPhone }}</span>
-              <span class="email">{{ pt.email }}</span>
-              <span class="position">{{ pt.position }}</span>
-              <span class="radioNum">{{ pt.radioNum }}</span>
-              <span class="stationNum">{{ pt.stationNum }}</span>
-              <span class="birthDate">{{ pt.dob }}</span>
-              <span class="startDate">{{ pt.startDate }}</span>
-              <span class="gender">{{ pt.gender }}</span>
-              <span class="active">{{ pt.active }}</span>
-              <span class="certifications">{{ pt.certifications }}</span>
+              <span class="fname">First Name: {{ pt.firstName }}</span>
+              <span class="lname">Last Name: {{ pt.lastName }}</span>
+              <span class="address">Address: {{ pt.address }}</span>
+              <span class="mobilePhone">mobile: {{ pt.mobilePhone }}</span>
+              <span class="workPhone">work: {{ pt.workPhone }}</span>
+              <span class="email">email: {{ pt.email }}</span>
+              <span class="position">position: {{ pt.position }}</span>
+              <span class="radioNum">radio number: {{ pt.radioNum }}</span>
+              <span class="stationNum">station: {{ pt.stationNum }}</span>
+              <span class="dob">DOB: {{ pt.dob }}</span>
+              <span class="startDate">Start Date: {{ pt.startDate }}</span>
+              <span class="gender">Gender: {{ pt.gender }}</span>
+              <span class="active">Active: {{ pt.active }}</span>
+              <span class="certifications">Certifications: {{ pt.certifications }}</span>
             </div>
     <!-- END content -->
 
