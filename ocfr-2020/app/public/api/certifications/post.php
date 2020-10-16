@@ -19,29 +19,15 @@ $db = DbConnection::getConnection();
 // Step 2: Create & run the query
 // Note the use of parameterized statements to avoid injection
 $stmt = $db->prepare(
-
-  'INSERT INTO person (empID, fname, lname, address, mobilePhone, workPhone, email, dob, startDate, gender, position, radioNum, stationNum, active, certifications)
-  VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)'
+  'INSERT INTO certification (certificationID, agency, certificationName, expDate)
+  VALUES (?, ?, ?, ?, )'
 );
 
 $stmt->execute([
-  $empID,
-  $_POST['fname'],
-  $_POST['lname'],
-  $_POST['address'],
-  $_POST['mobilePhone']
-  $_POST['workPhone'],
-  $_POST['email'],
-  $_POST['dob'],
-  $_POST['startDate'],
-  $_POST['gender'],
-  $_POST['position'],
-  $_POST['radioNum'],
-  $_POST['stationNum'],
-  $_POST['active'],
-  $_POST['certifications'],
-
-
+  $certificationID,
+  $_POST['agency'],
+  $_POST['certificationName'],
+  $_POST['expDate'],
 ]);
 
 // If needed, get auto-generated PK from DB
@@ -51,6 +37,4 @@ $stmt->execute([
 // Here, instead of giving output, I'm redirecting to the SELECT API,
 // just in case the data changed by entering it
 header('HTTP/1.1 303 See Other');
-
-header('Location: ../members/?empID=' . $empID);
-
+header('Location: ../records/?certificationID=' . $certificationID);
