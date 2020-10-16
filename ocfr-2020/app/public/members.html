@@ -36,20 +36,22 @@
       </div>
     </nav>
 
+
+
     <div class="container-fluid">
-        <div class="row" id="triagePage">
+        <div class="row">
           <div id="cardPaneLeft" class="col cardPane cardPaneLeft">
             <form method="post" v-on:submit.prevent="createUser()">
               <h3>Add New Member Record</h3>
 
               <div class="form-group">
               <label for="newPtFirstName">First Name</label>
-              <input type="text" v-model="newPtForm.firstName" class="form-control" id="newPtFirstName" placeholder="Tom">
+              <input type="text" v-model="newPtForm.fname" class="form-control" id="fname" placeholder="Tom">
             </div>
 
             <div class="form-group">
               <label for="newPtLastName">Last Name</label>
-              <input type="text" v-model="newPtForm.lastName" class="form-control" id="newPtLastName" placeholder="Gregory">
+              <input type="text" v-model="newPtForm.lname" class="form-control" id="newPtLastName" placeholder="Gregory">
             </div>
 
             <div class="form-group">
