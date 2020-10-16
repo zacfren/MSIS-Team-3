@@ -45,7 +45,7 @@ waitingApp = new Vue({
     },
     createUser(){
       this.newPTForm.empID = (this.newPTForm.fname.substring(0,1)+this.newPTForm.lname).toLowerCase();
-      fetch('./api/members/post.php', {
+      fetch('api/members/post.php', {
         method:'POST',
         body: JSON.stringify(this.person),
         headers: {
