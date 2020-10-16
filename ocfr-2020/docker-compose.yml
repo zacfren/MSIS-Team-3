@@ -5,6 +5,6 @@ services:
     ports:
       - "8080:80"
     volumes:
-      - ./app/public/index.html
+      - app/public/index.html
     env_file:
-      - ./docker/env
+      - docker/env
