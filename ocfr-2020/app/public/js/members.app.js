@@ -2,7 +2,7 @@ waitingApp = new Vue({
   el: '#cardPaneLeft',
   data:{
     ptList: [{
-      fname: '',
+      fname: 'firstNameTest',
       lname: '',
       address: '',
       mobilePhone: '',
@@ -36,7 +36,7 @@ waitingApp = new Vue({
   },
   methods:{
     fetchUser(){
-      fetch('api/members/')
+      fetch('./api/members/')
       .then(response => response.json())
       .then(json => {
         this.ptList=json;
