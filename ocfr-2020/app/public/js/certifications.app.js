@@ -34,7 +34,7 @@ waitingApp = new Vue({
       .then( response => response.json() )
       .then( json => {
         console.log("Returned from post:", json);
-        this.PtList.push(json[0]);
+        this.ptList.push(json[0]);
         this.newPTForm = this.newUserData();
       });
       console.log("Creating (POSTing)...I");
