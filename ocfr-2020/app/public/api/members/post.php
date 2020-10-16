@@ -19,16 +19,28 @@ $db = DbConnection::getConnection();
 // Step 2: Create & run the query
 // Note the use of parameterized statements to avoid injection
 $stmt = $db->prepare(
-  'INSERT INTO Patient (patientGuid, firstName, lastName, dob, sexAtBirth)
-  VALUES (?, ?, ?, ?, ?)'
+  'INSERT INTO person (empID, fname, lname, address, mobilePhone, workPhone, email, dob, startDate, gender, position, radioNum, stationNum, active, certifications)
+  VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)'
 );
 
 $stmt->execute([
-  $guid,
-  $_POST['firstName'],
-  $_POST['lastName'],
+  $empID,
+  $_POST['fname'],
+  $_POST['lname'],
+  $_POST['address'],
+  $_POST['mobilePhone']
+  $_POST['workPhone'],
+  $_POST['email'],
   $_POST['dob'],
-  $_POST['sexAtBirth']
+  $_POST['startDate'],
+  $_POST['gender'],
+  $_POST['position'],
+  $_POST['radioNum'],
+  $_POST['stationNum'],
+  $_POST['active'],
+  $_POST['certifications'],
+
+
 ]);
 
 // If needed, get auto-generated PK from DB
@@ -38,4 +50,4 @@ $stmt->execute([
 // Here, instead of giving output, I'm redirecting to the SELECT API,
 // just in case the data changed by entering it
 header('HTTP/1.1 303 See Other');
-header('Location: ../records/?guid=' . $guid);
+header('Location: ../members/?empID=' . $empID);

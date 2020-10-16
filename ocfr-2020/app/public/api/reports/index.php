@@ -6,7 +6,7 @@ require 'common.php';
 $db = DbConnection::getConnection();
 
 // Step 2: Create & run the query
-$sql = 'SELECT * FROM Reports r';
+$sql = 'SELECT * FROM assignCertification ac';
 $vars = [];
 
 // if (isset($_GET['guid'])) {
