@@ -1,5 +1,5 @@
 waitingApp = new Vue({
-  el: '#cardPaneLeft',
+  el: 'cardPaneLeft',
   data:{
     ptList: [{
       fname: 'firstNameTest',
