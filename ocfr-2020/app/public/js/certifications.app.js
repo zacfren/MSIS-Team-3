@@ -2,11 +2,13 @@ waitingApp = new Vue({
   el: '#cardPaneLeft',
   data:{
     ptList: [{
+      certificationID: '',
       agency: '',
       certificationName: '',
       expDate: '',
     }],
       newPTForm: {
+        certificationID: '',
         agency: '',
         certificationName: '',
         expDate: '',
@@ -42,20 +44,10 @@ waitingApp = new Vue({
     },
     newUserData() {
       return {
-        fname: '',
-        lname: '',
-        address: '',
-        mobilePhone: '',
-        workPhone: '',
-        email: '',
-        dob: '',
-        startDate: '',
-        gender: '',
-        position: '',
-        radioNum: '',
-        stationNum: '',
-        active: '',
-        certifications: ''
+        certificationID: '',
+        agency: '',
+        certificationName: '',
+        expDate: '',
       }
     }
   },
