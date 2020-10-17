@@ -38,8 +38,11 @@
 
     <div class="container-fluid">
         <div class="row" id="triagePage">
+
+
+
           <div id="cardPaneLeft" class="col cardPane cardPaneLeft">
-<<<<<<< HEAD
+
             <form method="post" v-on:submit.prevent="createCert()">
               <h3>Add New Certification</h3>
 
@@ -64,7 +67,7 @@
 
             <h3>List of All Certifications</h3>
 
-=======
+
             <div class="ptList" v-for="certification in ptList">
               <span class="certificationID"> Certification ID: {{ certification.certificationID }}</span>,<br/>
               <span class="agency"> Certification Agency: {{ certification.agency }}</span>,<br/>
@@ -99,7 +102,7 @@
 
             <h3>List of All Certifications</h3>
 
->>>>>>> 3cac0b294e74ed0af76ac7713efa0a8530bc4647
+
             <div class="patientCard" v-for="pt in ptList" v-on:click="activePt = pt">
               <span clas="agencyName">{{ pt.agencyName }}</span>
               <span class="certName">{{ pt.certName }}</span>
