@@ -41,7 +41,7 @@
 
             <form method="post" v-on:submit.prevent="createUser()">
               <h3>Add New Member Record</h3>
-
+              <div id="cardPaneLeft">
               <div class="person">
 
               <!-- <div class="form-group"> -->
@@ -125,7 +125,7 @@
   </form>
 
             <!-- <button v-on:click="createUser()">Create User</button> -->
-<div id="cardPaneLeft">
+
             <h3>List of All Members</h3>
 
             <div class="patientCard" v-for="pt in ptList" v-on:click="activePt = pt">
