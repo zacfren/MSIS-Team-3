@@ -38,7 +38,36 @@
 
     <div class="container-fluid">
         <div class="row" id="triagePage">
-         <div id="cardPaneLeft" class="col cardPane cardPaneLeft">
+
+
+
+          <div id="cardPaneLeft" class="col cardPane cardPaneLeft">
+
+            <form method="post" v-on:submit.prevent="createCert()">
+              <h3>Add New Certification</h3>
+
+              <div class="form-group">
+              <label for="newPtFirstName">Certification Agency</label>
+              <input type="text" v-model="newPtForm.firstName" class="form-control" id="newPtFirstName" placeholder="Tom">
+            </div>
+
+            <div class="form-group">
+              <label for="newPtLastName">Certification Name</label>
+              <input type="text" v-model="newPtForm.lastName" class="form-control" id="newPtLastName" placeholder="Gregory">
+            </div>
+
+            <div class="form-group">
+              <label for="newPtAddress">Expiration Term</label>
+              <input type="text" v-model="newPtForm.address" class="form-control" id="newPtAddress" placeholder="123 ABC Street">
+            </div>
+
+            <button type="submit" value=:"Create User" class="btn btn-primary">Create</button>
+
+            </form>
+
+            <h3>List of All Certifications</h3>
+
+
             <div class="ptList" v-for="certification in ptList">
               <span class="certificationID"> Certification ID: {{ certification.certificationID }}</span>,<br/>
               <span class="agency"> Certification Agency: {{ certification.agency }}</span>,<br/>
@@ -72,6 +101,7 @@
             </form>
 
             <h3>List of All Certifications</h3>
+
 
             <div class="patientCard" v-for="pt in ptList" v-on:click="activePt = pt">
               <span clas="agencyName">{{ pt.agencyName }}</span>
