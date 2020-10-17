@@ -38,16 +38,16 @@
 
     <div class="container-fluid">
         <div class="row">
-          <div id="cardPaneLeft">
+
             <form method="post" v-on:submit.prevent="createUser()">
               <h3>Add New Member Record</h3>
-
+              <div id="cardPaneLeft">
               <div class="person">
 
-              <div class="form-group">
+              <!-- <div class="form-group"> -->
               <label for="fname">First Name</label>
-              <input type="text" v-model="newPtForm.fname" class="form-control" placeholder="Tom">
-            </div>
+              <input type="text" v-model="newPtForm.fname" class="form-control" id="UserFirstName" placeholder="Tom">
+            <!-- </div> -->
 
             <div class="form-group">
               <label for="lname">Last Name</label>
@@ -121,7 +121,7 @@
               <input type="text" v-model="newPtForm.certifications" class="form-control" id="certifications" placeholder="Paramedic">
             </div>
           </div>
-          <input type="submit" value="createUser()" class="button">
+          <input type="submit" value="create User" class="button">
   </form>
 
             <!-- <button v-on:click="createUser()">Create User</button> -->
@@ -144,7 +144,8 @@
               <span class="active">Active: {{ pt.active }}</span>
               <span class="certifications">Certifications: {{ pt.certifications }}</span>
             </div>
-</div></div></div>
+</div></div>
+</div>
     <!-- END content -->
 
     <!-- Footer? Insert here -->
