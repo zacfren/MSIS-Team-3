@@ -25,10 +25,10 @@ waitingApp = new Vue({
       });
     },
     createUser(){
-      this.newPTForm.userID = (this.newPTForm.agency.substring(0,1)+this.newPTForm.lname).toLowerCase();
+      this.newPTForm.certificationID = (this.newPTForm.agency.substring(0,1)+this.newPTForm.certificationName).toLowerCase();
       fetch('api/certifications/post.php', {
         method:'POST',
-        body: JSON.stringify(this.newUser),
+        body: JSON.stringify(this.newPTForm),
         headers: {
           "Content-Type": "applications/json; charset=utf-8"
         }
@@ -36,7 +36,7 @@ waitingApp = new Vue({
       .then( response => response.json() )
       .then( json => {
         console.log("Returned from post:", json);
-        this.ptList.push(json[0]);
+        this.PTList.push(json[0]);
         this.newPTForm = this.newUserData();
       });
       console.log("Creating (POSTing)...I");
