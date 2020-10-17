@@ -60,16 +60,18 @@
             <button type="submit" value=:"Create User" class="btn btn-primary">Create</button>
 
             </form>
-
+</div>
+</div>
+          <div class="container-fluid">
             <h3>List of All Certifications</h3>
-
-
             <div class="ptList" v-for="pt in ptList">
               <span class="certificationID"> Certification ID: {{ pt.certificationID }}</span>,<br/>
               <span class="agency"> Certification Agency: {{ pt.agency }}</span>,<br/>
               <span class="certificationName">Certification Name: {{pt.certificationName }}</span>,<br/>
               <span class="expDate">Expiration Period: {{pt.expDate }}</span>
-            </div><br/>
+            </div>
+          </div>
+          <br/>
 
     <div class="container-fluid">
         <div class="row" id="triagePage">
@@ -93,15 +95,9 @@
             </div>
             </form>
             <button type="submit" value=:"Create Cert" class="btn btn-primary">Create</button>
-
-
-            <h3>List of All Certifications</h3>
-            <div class="patientCard" v-for="pt in ptList" v-on:click="activePt = pt">
-              <span class="agencyName">{{ pt.certificationID }}</span>
-              <span class="agencyName">{{ pt.agencyName }}</span>
-              <span class="certName">{{ pt.certName }}</span>
-              <span class="expTerm">{{ pt.expTerm }}</span>
-            </div>
+          </div>
+        </div>
+      </div>
     <!-- END content -->
 
     <!-- Footer? Insert here -->
