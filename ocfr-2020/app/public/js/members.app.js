@@ -49,7 +49,7 @@ waitingApp = new Vue({
       fetch('api/members/post.php', {
 
         method:'POST',
-        body: JSON.stringify(this.person),
+        body: JSON.stringify(this.newPtForm),
         headers: {
           "Content-Type": "applications/json; charset=utf-8"
         }
