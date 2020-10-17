@@ -126,8 +126,8 @@
             <h3>List of All Members</h3>
 
             <div class="patientCard" v-for="pt in ptList" v-on:click="activePt = pt">
-              <span class="fname">First Name: {{ pt.firstName }}</span>
-              <span class="lname">Last Name: {{ pt.lastName }}</span>
+              <span class="fname">First Name: {{ pt.fname }}</span>
+              <span class="lname">Last Name: {{ pt.lname }}</span>
               <span class="address">Address: {{ pt.address }}</span>
               <span class="mobilePhone">mobile: {{ pt.mobilePhone }}</span>
               <span class="workPhone">work: {{ pt.workPhone }}</span>
