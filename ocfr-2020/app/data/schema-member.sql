@@ -1,27 +1,45 @@
-USE msis_triage;
+CREATE DATABASE ocfr_team3;
+USE ocfr_team3;
+CREATE TABLE person
+	(empID int auto_increment not null,
+	fname varchar(50) not null,
+	lname varchar(50) not null,
+	address varchar(200) not null,
+	mobilePhone varchar(15),
+	workPhone varchar(15),
+	email varchar(50),
+	dob DATE,
+	startDate DATE,
+	gender varchar(15),
+	position varchar(50),
+  radioNum varchar(10),
+	stationNum int,
+	active varchar(15),
+	certifications varchar(250),
+	PRIMARY KEY (empID)
+)
+ENGINE=INNODB;
 
-CREATE TABLE Patient (
-    patientGuid VARCHAR(64) PRIMARY KEY,
-    firstName VARCHAR(64),
-    lastName VARCHAR(64),
-    dob DATE DEFAULT NULL,
-    sexAtBirth CHAR(1) DEFAULT ''
-);
+CREATE TABLE certification
+	(certificationID int auto_increment not null,
+	agency varchar(200),
+  certificationName varchar(200),
+	expDate DATE,
+	PRIMARY KEY (certificationID)
+)
+ENGINE=INNODB;
 
-INSERT INTO Patient (patientGuid, firstName, lastName, dob, sexAtBirth) VALUES
-("SOME-REALLY-LONG-1234", "Sylvia", "Hernandez", "2012-09-01",  "F"),
-("SOME-REALLY-SHORT-5678", "Vish", "Balasubramanian", "1950-12-15",  "M"),
-("SOME-UNIQUE-ABCDE1", "J", "Doe", "1950-00-00",  ""),
-("SOME-DUMMY-DATA", "Pepper", "Potts", "1990-01-31",  "F");
 
-CREATE TABLE PatientVisit (
-    visitId INTEGER PRIMARY KEY AUTO_INCREMENT,
-    patientGuid VARCHAR(64) UNIQUE,
-    visitDescription TEXT NOT NULL,
-    visitDateUtc DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP,
-    priority ENUM('low', 'medium', 'high') NOT NULL DEFAULT 'low'
 
-);
+CREATE TABLE assignCertification
+	(empID int not null,
+  certificationID int not null,
+	dateAssigned DATE,
+	FOREIGN KEY (empID) references person(empID),
+	FOREIGN KEY (certificationID) references certification(certificationID)
+)
+ENGINE=INNODB;
 
-INSERT INTO PatientVisit (visitId, patientGuid, visitDescription) VALUES
-(1, 'SOME-REALLY-LONG-1234', 'Anxiety from D&S');
+SELECT * FROM person;
+SELECT * FROM certification;
+SELECT * FROM assignCertification;
