@@ -53,6 +53,17 @@ var app = new Vue({
         certificationName: '',
         expDate: '',
       }
+    },
+    deleteCert:function(certificationID){
+      {
+        axios.post('delete.php', {
+          action:'delete',
+          id: certificationID
+        }).then(function(response){
+          application
+        })
+        })
+      }
     }
   },
 

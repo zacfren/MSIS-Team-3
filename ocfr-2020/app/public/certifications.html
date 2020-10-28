@@ -36,10 +36,51 @@
       </div>
     </nav>
 
-<div class="container-fluid" id="certapp">
-        <div class="row">
-          <!-- <div id="cardPaneLeft" class="col cardPane cardPaneLeft"> -->
-          <h3>Add New Certification</h3>
+<div id="certapp">
+        <table class="sort table ttable-hover">
+          <thead>
+            <tr>
+              <!-- <th>Certification ID</th> -->
+              <th>Certification Agency</th>
+              <th>Certification Name</th>
+              <th>Certification Expiration</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr v-for="c in certList">
+              <!-- <td>{{ c.certificationID }}</td> -->
+              <td>{{ c.agency }}</td>
+              <td>{{ c.certificationName }}</td>
+              <td>{{ c.expDate }}</td>
+              <!-- <td><button type="button" name="edit" class="btn btn-primary btn-xs edit" on-click="fetchCert(c.certificationID)">Edit Certification</button></td>
+              <td><button type="button" name="delete" class="btn btn-primary btn-xs delete" on-click="deleteCert(c.certificationID)">Delete Certification</button></td> -->
+            </tr>
+            <tr>
+              <td><input type='text' v-model='certList.agency'></td>
+              <td><input type='text' v-model='certList.certificationName'></td>
+              <td><input type='text' v-model='certList.expDate'></td>
+              <td><input type="button" value="Edit" class="btn btn-primary btn-xs edit" on-click="editCert()">Edit</td>
+            </tr>
+            <tr>
+              <td><input type='text' v-model='certList.agency'></td>
+              <td><input type='text' v-model='certList.certificationName'></td>
+              <td><input type='text' v-model='certList.expDate'></td>
+              <td><input type="button" value="Delete" class="btn btn-primary btn-xs delete" on-click="deleteCert()">Delete</td>
+            </tr>
+            <tr>
+              <td><input type='text' v-model='newCert.agency'></td>
+              <td><input type='text' v-model='newCert.certificationName'></td>
+              <td><input type='text' v-model='newCert.expDate'></td>
+              <td><input type="button" value="Create" class="btn btn-primary btn-xs create" on-click="createCert()">Create</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <form id="newCertForm" v-on:submti:prevent="createCert()">
+          <label for="newCert">Comment</label><br>
+            <input id="newCert" type="text" v-model="newCert.certificationID"
+</div>
+          <!-- <h3>Add New Certification</h3>
             <form method="post" v-on:submit.prevent="createCert()">
               <div class="certification">
                   <div class="form-group">
@@ -64,8 +105,8 @@
               </div>
                     <input type="submit" value="Create Certification" class="btn btn-primary">
             </form>
-        </div>
-        <div class="row">
+        </div> -->
+        <!-- <div class="row">
         <h3>List of All Certifications</h3>
           <div class="certList" v-for="c in certList">
             <span class="certificationID"> Certification ID: {{ c.certificationID }}</span>,<br/>
@@ -73,7 +114,7 @@
             <span class="certificationName">Certification Name: {{c.certificationName }}</span>,<br/>
             <span class="expDate">Expiration Period: {{c.expDate }}</span>
           </div>
-        </div>
+        </div> -->
 </div>
         <br/>
     <!-- END content -->
@@ -85,7 +126,7 @@
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
-
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
     <script src="js/index.app.js"></script>
   </body>
