@@ -1,4 +1,4 @@
-waitingApp = new Vue({
+var waitingApp = new Vue({
   el: '#cardPaneLeft',
   data:{
     ptList: [{
@@ -43,11 +43,9 @@ waitingApp = new Vue({
         console.log(this.ptList);
       });
     },
-    createUser(){
+    createUser( evt ){
 
-      this.newPTForm.empID = (this.newPTForm.fname.substring(0,1)+this.newPTForm.lname).toLowerCase();
       fetch('api/members/post.php', {
-
         method:'POST',
         body: JSON.stringify(this.newPtForm),
         headers: {
