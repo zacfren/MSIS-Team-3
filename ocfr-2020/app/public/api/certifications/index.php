@@ -21,7 +21,7 @@ $stmt->execute($vars);
 $ptList = $stmt->fetchAll();
 
 // Step 3: Convert to JSON
-$json = json_encode($ptList, JSON_PRETTY_PRINT);
+$json = json_encode($certList, JSON_PRETTY_PRINT);
 
 // Step 4: Output
 header('Content-Type: application/json');
