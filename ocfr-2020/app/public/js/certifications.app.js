@@ -1,34 +1,29 @@
 var app = new Vue({
   el: '#certapp',
   data:{
-    certList: [{
-      certificationID: '',
-      agency: '',
-      certificationName: '',
-      expDate: '',
-    }],
+    certList: [],
+    activeCert: null,
     newCert: {
-      certificationID: '',
       agency: '',
       certificationName: '',
       expDate: '',
       }
   },
-  created() {
-    this.fetchCert
-  },
+  // created() {
+  //   this.fetchCert
+  // },
 
   methods: {
     //get api
     fetchCert(){
-      fetch('api/certifications/index.php')
+      fetch('api/certifications/')
       .then(response => response.json())
       .then(json => {
         this.ptList=json;
         console.log(this.certList);
       });
     },
-    createCert(){
+    createCert( evt ){
       // this.newPTForm.certificationID = (this.newPTForm.agency.substring(0,1)+this.newPTForm.certificationName).toLowerCase();
       fetch('api/certifications/post.php', {
         method:'POST',
@@ -48,10 +43,20 @@ var app = new Vue({
     },
     newCertData() {
       return {
-        certificationID: '',
         agency: '',
         certificationName: '',
         expDate: '',
+      }
+    },
+    deleteCert:function(certificationID){
+      {
+        axios.post('delete.php', {
+          action:'delete',
+          id: certificationID
+        }).then(function(response){
+          application
+        })
+        })
       }
     }
   },
