@@ -1,22 +1,8 @@
 var waitingApp = new Vue({
   el: '#cardPaneLeft',
   data:{
-    ptList: [{
-      fname: 'firstNameTest',
-      lname: '',
-      address: '',
-      mobilePhone: '',
-      workPhone: '',
-      email: '',
-      dob: '',
-      startDate: '',
-      gender: '',
-      position: '',
-      radioNum: '',
-      stationNum: '',
-      active: '',
-      certifications: ''
-    }],
+    ptList: [],
+    activePt: null,
       newPtForm: {
         fname: '',
         lname: '',
@@ -49,13 +35,13 @@ var waitingApp = new Vue({
         method:'POST',
         body: JSON.stringify(this.newPtForm),
         headers: {
-          "Content-Type": "applications/json; charset=utf-8"
+          "Content-Type": "application/json; charset=utf-8"
         }
       })
       .then( response => response.json() )
       .then( json => {
         console.log("Returned from post:", json);
-        this.PtList.push(json[0]);
+        this.ptList.push(json[0]);
         this.newPtForm = this.newUserData();
       });
       console.log("Creating (POSTing)...I");
