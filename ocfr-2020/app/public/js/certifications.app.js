@@ -1,48 +1,52 @@
-waitingApp = new Vue({
-  el: '#cardPaneLeft',
+var app = new Vue({
+  el: '#certapp',
   data:{
-    ptList: [{
+    certList: [{
       certificationID: '',
       agency: '',
       certificationName: '',
       expDate: '',
     }],
-      newPTForm: {
-        certificationID: '',
-        agency: '',
-        certificationName: '',
-        expDate: '',
+    newCert: {
+      certificationID: '',
+      agency: '',
+      certificationName: '',
+      expDate: '',
       }
   },
-  methods:{
+  created() {
+    this.fetchCert
+  },
+
+  methods: {
     //get api
-    fetchUser(){
-      fetch('api/certifications/')
+    fetchCert(){
+      fetch('api/certifications/index.php')
       .then(response => response.json())
       .then(json => {
         this.ptList=json;
-        console.log(this.ptList);
+        console.log(this.certList);
       });
     },
-    createUser(){
-      this.newPTForm.certificationID = (this.newPTForm.agency.substring(0,1)+this.newPTForm.certificationName).toLowerCase();
+    createCert(){
+      // this.newPTForm.certificationID = (this.newPTForm.agency.substring(0,1)+this.newPTForm.certificationName).toLowerCase();
       fetch('api/certifications/post.php', {
         method:'POST',
-        body: JSON.stringify(this.newPTForm),
+        body: JSON.stringify(this.newCert),
         headers: {
-          "Content-Type": "applications/json; charset=utf-8"
+          "Content-Type": "application/json; charset=utf-8"
         }
       })
-      .then( response => response.json() )
+      .then( response => response.json())
       .then( json => {
         console.log("Returned from post:", json);
-        this.PTList.push(json[0]);
-        this.newPTForm = this.newUserData();
+        this.certList.push(json[0]);
+        this.newCert = this.newCertData();
       });
       console.log("Creating (POSTing)...I");
-      console.log(this.newPTForm);
+      console.log(this.newCert);
     },
-    newUserData() {
+    newCertData() {
       return {
         certificationID: '',
         agency: '',
@@ -51,7 +55,8 @@ waitingApp = new Vue({
       }
     }
   },
+
   created(){
-    this.fetchUser();
+    this.fetchCert();
   }
-});
+})
