@@ -7,7 +7,9 @@ var app = new Vue({
       agency: '',
       certificationName: '',
       expDate: '',
-      }
+    },
+    deleteCertForm: {},
+    deletedCert: ''
   },
   // created() {
   //   this.fetchCert
@@ -48,18 +50,23 @@ var app = new Vue({
         expDate: '',
       }
     },
-    deleteCert:function(certificationID){
-      {
-        axios.post('delete.php', {
-          action:'delete',
-          id: certificationID
-        }).then(function(response){
-          application
+    deleteCert( evt) {
+      fetch('api/certifications/delete.php', {
+        method: 'POST',
+        body: JSON.stringify(this.deleteCertForm),
+        headers: {
+          "Content-Type": "application/json; charset=utf-8"
+        }
         })
+        .then( response => response.json() )
+        .then( json => {
+          console.log(this.deleteCertForm);
+          //
+          }
+        console.log("Deleting Certification...!");
         })
-      }
-    }
-  },
+        }
+      })
 
   created(){
     this.fetchCert();
