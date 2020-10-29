@@ -11,17 +11,19 @@ $db = DbConnection::getConnection();
 
 // Step 2: Create & run the query
 // Note the use of parameterized statements to avoid injection
-$stmt = $db->prepare(
-  'INSERT INTO certification (agency, certificationName, expDate)
-  VALUES (?, ?, ?)'
+$stmt = $db->prepare($sql =
+  'DELETE FROM certification
+  WHERE certificationID=?');
+  // 'VALUES (?, ?, ?)'
 );
 
 $stmt->execute([
-  // $certificationID,
-  $_POST['agency'],
-  $_POST['certificationName'],
-  $_POST['expDate'],
+  $_POST['certificationID']);
 ]);
+
+$delcert = $stmt->fetchAll();
+
+$json = json_encode($delcert, JSON_PRETTY_PRINT);
 
 // If needed, get auto-generated PK from DB
 // $pk = $db->lastInsertId();  // https://www.php.net/manual/en/pdo.lastinsertid.php
@@ -29,5 +31,5 @@ $stmt->execute([
 // Step 4: Output
 // Here, instead of giving output, I'm redirecting to the SELECT API,
 // just in case the data changed by entering it
-header('HTTP/1.1 303 See Other');
-header('Location: ../certification/?certificationID=' . $certificationID);
+header('Content-Type: application/json');
+echo $json;
