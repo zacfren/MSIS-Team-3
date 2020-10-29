@@ -32,7 +32,8 @@ ENGINE=INNODB;
 
 
 CREATE TABLE assignCertification
-	(empID int not null,
+	(empcertID int PRIMARY KEY auto_increment not null,
+		empID int not null,
   certificationID int not null,
 	dateAssigned DATE,
 	FOREIGN KEY (empID) references person(empID),
