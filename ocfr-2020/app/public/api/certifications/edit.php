@@ -14,7 +14,7 @@ $db = DbConnection::getConnection();
 $stmt = $db->prepare($sql =
   'UPDATE certification
   SET agency = ?, certificationName = ?, expDate = ?
-  WHERE certificationID=?');
+  WHERE certificationID= ?');
   $stmt->execute([$_POST['agency'], [$_POST['certificationName'], [$_POST['expDate'], [$_POST['certificationID']]);
 
 $certification = $stmt->fetchAll();
