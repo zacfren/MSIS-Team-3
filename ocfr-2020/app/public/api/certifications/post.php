@@ -24,7 +24,7 @@ $stmt->execute([
 ]);
 
 // If needed, get auto-generated PK from DB
-// $pk = $db->lastInsertId();  // https://www.php.net/manual/en/pdo.lastinsertid.php
+ $certificationID = $db->lastInsertId();  // https://www.php.net/manual/en/pdo.lastinsertid.php
 
 // Step 4: Output
 // Here, instead of giving output, I'm redirecting to the SELECT API,
