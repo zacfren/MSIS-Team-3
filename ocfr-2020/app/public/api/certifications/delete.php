@@ -17,8 +17,7 @@ $stmt = $db->prepare($sql =
   // 'VALUES (?, ?, ?)'
 
 $stmt->execute([
-  $_POST('certificationID');
-]);
+  $_POST('certificationID')]);
 
 $delcert = $stmt->fetchAll();
 
