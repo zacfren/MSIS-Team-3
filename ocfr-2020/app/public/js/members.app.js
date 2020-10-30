@@ -21,24 +21,6 @@ var waitingApp = new Vue({
       },
       deletePtForm: {}
   },
-  newUserData() {
-    return {
-      fname: '',
-      lname: '',
-      address: '',
-      mobilePhone: '',
-      workPhone: '',
-      email: '',
-      dob: '',
-      startDate: '',
-      gender: '',
-      position: '',
-      radioNum: '',
-      stationNum: '',
-      active: '',
-      certifications: ''
-    }
-  },
   methods:{
     fetchUser(){
       fetch('api/members/')
@@ -98,7 +80,24 @@ var waitingApp = new Vue({
       console.log("Updating Pt...!")
     },
 
-
+    newUserData() {
+      return {
+        fname: '',
+        lname: '',
+        address: '',
+        mobilePhone: '',
+        workPhone: '',
+        email: '',
+        dob: '',
+        startDate: '',
+        gender: '',
+        position: '',
+        radioNum: '',
+        stationNum: '',
+        active: '',
+        certifications: ''
+      }
+    }
   },
   created(){
     this.fetchUser();
