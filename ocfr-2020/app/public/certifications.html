@@ -45,8 +45,9 @@
     <span class="expDate">Expiration Period: {{c.expDate }}</span>
   </div><br>
           <!-- <div id="cardPaneLeft" class="col cardPane cardPaneLeft"> -->
-          <form method="post" v-on:submit.prevent="createCert()"></form>
-            <h3>Add Certification</h3>
+        <div>
+          <h3>Add Certification</h3>
+          <form method="post" v-on:submit.prevent="createCert()">
               <div class="certification">
                   <div class="form-group">
                     <label for="agency">Certification Agency</label><br>
@@ -63,17 +64,19 @@
                     <input type="text" v-model="newCert.expDate" class="form-control" id="expDate" placeholder="2 years">
                   </div>
                   <button type="submit" class="btn btn-primary">Add</button>
-            </div>
-          </form><br>
-
+          </form>
+        </div>
+        </div><br>
+        <div>
           <h3>Delete Certification</h3>
           <form method="post" v-on:submit.prevent="deleteCert">
             <label for="certificationID">Enter Certification ID</label>
             <input type="integer" id="certificationID" name="certificationID" v-model="deleteCertForm.certificationID" required></input><br>
             <!-- <button class="btn btn-lg btn-primary btn-block" type="submit">Submit</button> -->
             <button type="submit" class="btn btn-primary">Delete</button>
-          </form><br>
-
+          </form>
+        </div><br>
+        <div>
           <h3>Edit Certification</h3>
           <form method="post" v-on:submit.prevent="editCert">
             <label for="certificationID">Enter Certification ID:</label>
@@ -86,6 +89,7 @@
             <input type="integer" id="expDate" name="expDate" v-model="editCertForm.expDate" required></input><br>
             <button type="submit" class="btn btn-primary">Edit</button>
           </form>
+        </div>
 </div>
         <br/>
     <!-- END content -->
