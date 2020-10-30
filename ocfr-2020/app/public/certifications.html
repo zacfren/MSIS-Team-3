@@ -45,6 +45,7 @@
   <div class="certification">
     <form method="post" v-on:submit.prevent="createCert()">
         <h3>Add Certification</h3>
+
       <div class="form-group">
         <label for="agency">Certification Agency</label><br>
         <input type="text" v-model="newCertForm.agency" class="form-control" id="agency" placeholder="American Red Cross"><br>
@@ -63,13 +64,13 @@
     </form>
 <br>
     <form method="post" v-on:submit.prevent="deleteCert">
-        <h3>Delete Certification</h3>
+    <h3>Delete Certification</h3>
       <div class="form-group">
         <label for="certificationID">Certification ID</label>
         <input type="integer" id="certificationID" name="certificationID" v-model="deleteCertForm.certificationID" required></input>
       </div>
             <!-- <button class="btn btn-lg btn-primary btn-block" type="submit">Submit</button> -->
-            <button type="submit" class="btn btn-primary">Delete</button>
+      <button type="submit" class="btn btn-primary">Delete</button>
     </form>
 <br>
     <form method="post" v-on:submit.prevent="editCert">
