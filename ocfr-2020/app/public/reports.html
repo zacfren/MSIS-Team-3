@@ -5,15 +5,51 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
+
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
     <!-- my custom CSS goes here -->
-    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/styles1.css">
+    <link rel="stylesheet" href="css/normalize.css">
 
     <title>OCFR Project</title>
   </head>
   <body>
-    <nav class="navbar navbar-expand-md">
+
+    <nav class= "indexNav">
+
+  <section class="bottom">
+    <a href="index.html">Home</a>
+    <a href="members.html">Members</a>
+    <a href="certifications.html">Certifications</a>
+    <div class="dropdown">
+      <button class="dropbtn">Reports</button>
+      <div class="dropdown-content">
+        <a class="repLink" href="reports.html">Report 1</a>
+        <a class="repLink" href="#">Anotha Report</a>
+
+      </div>
+    </div>
+  </section>
+    </nav>
+
+
+
+    <header class="indexHead">
+      <form action="cert-filter.php" method='post'>
+        Certification Type: <select name="cert-filter">
+          <option value="" disabled selected hidden>Choose A Certification</option>
+          <option value="CPR">CPR</option>
+          <option value="Firefighter">Firefighter</option>
+          <option value="Paramedic">Paramedic</option>
+        </select>
+
+          <input type="submit" value="Filter" Placeholder='Filter'>
+          <a href="reports.html"><button>Reset</button></a>
+      </form>
+    </header>
+
+    <!-- <nav class="navbar navbar-expand-md">
       <a class="navbar-brand" href="#">OCFR</a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
@@ -30,14 +66,14 @@
             <a class="nav-link" href="certifications.html">Certifications</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="reports.html">Reports<span class="sr-only">(current)</span></a>
+            <a class="nav-link" href="extra.html">Reports<span class="sr-only">(current)</span></a>
           </li>
         </ul>
       </div>
-    </nav>
+    </nav> -->
 
 
-    <h5>Please select a drop down option to filter expired reports.</h5>
+    <!-- <h5>Please select a drop down option to filter expired reports.</h5>
 
 
 
@@ -51,7 +87,7 @@
 
     					<input type="submit" value="Filter" Placeholder='Filter'>
               <a href="reports.html"><button>Reset</button></a>
-    			</form>
+    			</form> -->
 
 
 
