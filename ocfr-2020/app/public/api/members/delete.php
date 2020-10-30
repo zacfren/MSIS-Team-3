@@ -11,16 +11,14 @@ $db = DbConnection::getConnection();
 
 // Step 2: Create & run the query
 // Note the use of parameterized statements to avoid injection
-$stmt = $db->prepare($sql =
-  'DELETE FROM person
-  WHERE empID = ?');
-  // 'VALUES (?, ?, ?)'
+$stmt = $db->prepare(
+  $sql = 'DELETE FROM person WHERE empID = ?'
+);
+$stmt->execute([ $_POST['empID'] ]);
 
-$stmt->execute([$_POST['empID']]);
+$deletePtForm = $stmt->fetchAll();
 
-$delperson = $stmt->fetchAll();
-
-$json = json_encode($delperson, JSON_PRETTY_PRINT);
+$json = json_encode($deletePtForm, JSON_PRETTY_PRINT);
 
 // If needed, get auto-generated PK from DB
  $empID = $db->lastInsertId();  // https://www.php.net/manual/en/pdo.lastinsertid.php

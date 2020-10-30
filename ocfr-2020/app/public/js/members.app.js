@@ -19,22 +19,7 @@ var waitingApp = new Vue({
         active: '',
         certifications: ''
       },
-      deletePtForm: {
-        fname: '',
-        lname: '',
-        address: '',
-        mobilePhone: '',
-        workPhone: '',
-        email: '',
-        dob: '',
-        startDate: '',
-        gender: '',
-        position: '',
-        radioNum: '',
-        stationNum: '',
-        active: '',
-        certifications: ''
-      }
+      deletePtForm: {}
   },
   methods:{
     fetchUser(){
