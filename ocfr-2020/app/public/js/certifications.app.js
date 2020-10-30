@@ -1,4 +1,4 @@
-var waitingApp = new Vue({
+var app = new Vue({
   el: '#certapp',
   data:{
     certList: [],
