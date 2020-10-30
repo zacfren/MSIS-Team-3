@@ -47,26 +47,27 @@
     <br>
   </div>
           <!-- <div id="cardPaneLeft" class="col cardPane cardPaneLeft"> -->
-        <div>
-          <div class="certification">
-            <form method="post" v-on:submit.prevent="createCert()">
-              <h3>Add Certification</h3>
-                  <div class="form-group">
-                    <label for="agency">Certification Agency</label><br>
-                      <input type="text" v-model="newCertForm.agency" class="form-control" id="agency" placeholder="American Red Cross"><br>
-                  </div>
 
-                  <div class="form-group">
-                    <label for="certificationName">Certification Name</label><br>
-                      <input type="text" v-model="newCertForm.certificationName" class="form-control" id="certificationName" placeholder="CPR"><br>
-                  </div>
+  <!-- <div class="certification"> -->
+  <form method="post" v-on:submit.prevent="createCert()">
+      <h3>Add Certification</h3>
+        <div class="certification">
+    <div class="form-group">
+      <label for="agency">Certification Agency</label><br>
+      <input type="text" v-model="newCertForm.agency" class="form-control" id="agency" placeholder="American Red Cross"><br>
+    </div>
 
-                  <div class="form-group">
-                    <label for="expDate">Expiration Period</label>
-                    <input type="text" v-model="newCertForm.expDate" class="form-control" id="expDate" placeholder="2 years">
-                  </div>
-                  <button type="submit" class="btn btn-primary">Add</button>
-            </form>
+    <div class="form-group">
+      <label for="certificationName">Certification Name</label><br>
+      <input type="text" v-model="newCertForm.certificationName" class="form-control" id="certificationName" placeholder="CPR"><br>
+    </div>
+
+    <div class="form-group">
+      <label for="expDate">Expiration Period</label>
+      <input type="text" v-model="newCertForm.expDate" class="form-control" id="expDate" placeholder="2 years">
+    </div>
+    <button type="submit" class="btn btn-primary">Add</button>
+  </form>
         </div>
         </div><br>
         <div>
