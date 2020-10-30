@@ -1,4 +1,3 @@
-indexphp
 <?php
 
 require 'common.php';

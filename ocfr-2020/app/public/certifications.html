@@ -38,9 +38,9 @@
 
 <div id="certapp">
   <h3>List of All Certifications</h3>
-  <div class="certList" v-for="c in certList" v-on:click="activeCert = c">
-    <span class="agency"> Certification Agency: {{ c.agency }}</span>,<br/>
-    <span class="certificationName">Certification Name: {{c.certificationName }}</span>,<br/>
+  <div class="patientCard" v-for="c in certList" v-on:click="activeCert = c">
+    <span class="agency"> Certification Agency: {{ c.agency }}</span>,<br>
+    <span class="certificationName">Certification Name: {{c.certificationName }}</span>,<br>
     <span class="expDate">Expiration Period: {{c.expDate }}</span>
   </div><br>
           <!-- <div id="cardPaneLeft" class="col cardPane cardPaneLeft"> -->
@@ -92,7 +92,7 @@
           </form>
         </div>
 </div>
-        <br/>
+        <br>
     <!-- END content -->
 
     <!-- Footer? Insert here -->
