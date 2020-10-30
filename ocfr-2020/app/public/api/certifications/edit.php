@@ -15,7 +15,7 @@ $stmt = $db->prepare($sql = 'UPDATE certification SET agency = ?, certificationN
   $stmt->execute([$_POST['agency']], [$_POST['certificationName']], [$_POST['expDate']], [$_POST['certificationID']]);
 
 $certification = $stmt->fetchAll();
-$json = json_encode[[$certification] JSON_PRETTY_PRINT];
+$json = json_encode[$certification JSON_PRETTY_PRINT];
 
 ]);
 
