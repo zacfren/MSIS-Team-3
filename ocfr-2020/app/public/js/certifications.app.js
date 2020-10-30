@@ -1,12 +1,12 @@
-var app = new Vue({
+var waitingApp = new Vue({
   el: '#certapp',
   data:{
     certList: [],
     activeCert: null,
-    newCert: {
-      agency: '',
-      certificationName: '',
-      expDate: ''
+      newCert: {
+        agency: '',
+        certificationName: '',
+        expDate: ''
     },
 
     newCertForm: {
@@ -21,9 +21,7 @@ var app = new Vue({
     editCertForm: {},
     editedCert: ''
   },
-  // created() {
-  //   this.fetchCert
-  // },
+
 
   methods: {
     newCertData() {
@@ -48,7 +46,6 @@ var app = new Vue({
       // this.newPTForm.certificationID = (this.newPTForm.agency.substring(0,1)+this.newPTForm.certificationName).toLowerCase();
       fetch('api/certifications/post.php', {
         method:'POST',
-        //body: JSON.stringify(this.newCert),
         body: JSON.stringify(this.newCertForm),
         headers: {
           "Content-Type": "application/json; charset=utf-8"

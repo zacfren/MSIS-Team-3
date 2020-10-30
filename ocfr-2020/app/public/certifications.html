@@ -38,13 +38,13 @@
 
 <div id="certapp">
   <h3>List of All Certifications</h3>
-  <div class="patientCard" v-for="c in certList" v-on:click="activeCert = c">
+  <div v-for="c in certList" v-on:click="activeCert = c">
     <span class="agency"> Certification Agency: {{ c.agency }}</span>,<br>
     <span class="certificationName">Certification Name: {{c.certificationName }}</span>,<br>
     <span class="expDate">Expiration Period: {{c.expDate }}</span>
   </div><br>
           <!-- <div id="cardPaneLeft" class="col cardPane cardPaneLeft"> -->
-        <div>
+        <!-- <div>
 
           <form method="post" v-on:submit.prevent="createCert()">
             <h3>Add Certification</h3>
@@ -67,13 +67,12 @@
                   <button type="submit" class="btn btn-primary">Add</button>
           </form>
         </div>
-        </div><br>
-        <div>
+        </div><br> -->
+        <!-- <div>
           <h3>Delete Certification</h3>
           <form method="post" v-on:submit.prevent="deleteCert">
             <label for="certificationID">Certification ID</label>
             <input type="integer" id="certificationID" name="certificationID" v-model="deleteCertForm.certificationID" required></input><br>
-            <!-- <button class="btn btn-lg btn-primary btn-block" type="submit">Submit</button> -->
             <button type="submit" class="btn btn-primary">Delete</button>
           </form>
         </div><br>
@@ -90,7 +89,7 @@
             <input type="integer" id="expDate" name="expDate" v-model="editCertForm.expDate" required></input><br>
             <button type="submit" class="btn btn-primary">Update</button>
           </form>
-        </div>
+        </div> -->
 </div>
         <br>
     <!-- END content -->
