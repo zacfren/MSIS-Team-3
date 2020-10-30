@@ -138,7 +138,7 @@
 
         <input type="submit" value="Create User" class="button">
       </form>
-  <br>
+<br>
       <form method="post" v-on:submit.prevent="deletePt()">
       <h3>Delete Member</h3>
         <div class="form-group">
@@ -151,18 +151,23 @@
       <form method="post" v-on:submit.prevent="editPt()">
       <h3>Edit Member</h3>
           <div class="form-group">
-            <label for="empID"> Emp ID </label>
-            <input type="integer" id="empID" name="empID" v-model="editPtForm.empID" required></input><br>
+            <label for="empID">Employee ID</label>
+            <input type="integer" id="empID" name="empID" v-model="editPtForm.empID" required></input>
+            <br>
             <label for="agency">First name</label>
-            <input type="text" id="fname" name="fname" v-model="editPtForm.fname" required></input><br>
+            <input type="text" id="fname" name="fname" v-model="editPtForm.fname" required></input>
+            <br>
             <label for="MemberName">Last name</label>
-            <input type="text" id="lname" name="lname" v-model="editPtForm.lname" required></input><br>
+            <input type="text" id="lname" name="lname" v-model="editPtForm.lname" required></input>
+            <br>
             <label for="empID">Email</label>
-            <input type="text" id="email" name="email" v-model="editPtForm.email" required></input><br>
+            <input type="text" id="email" name="email" v-model="editPtForm.email" required></input>
+            <br>
           </div>
           <button type="submit" class="btn btn-primary">Update</button>
-        </form>
-        </div>
+      </form>
+<br>
+  </div>
 </div>
     <!-- END content -->
 
