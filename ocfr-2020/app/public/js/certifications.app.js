@@ -78,7 +78,7 @@ var app = new Vue({
           //
           });
         console.log("Deleting Certification...!");
-        }),
+        },
     
     editCert( evt ) {
       fetch('api/certifications/edit.php', {
