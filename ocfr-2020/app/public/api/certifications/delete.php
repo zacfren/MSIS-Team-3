@@ -15,7 +15,6 @@ $stmt = $db->prepare($sql =
   'DELETE FROM certification
   WHERE certificationID=?');
   // 'VALUES (?, ?, ?)'
-);
 
 $stmt->execute([
   $_POST['certificationID']);
