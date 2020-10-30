@@ -38,7 +38,7 @@
 
 <div class="container-fluid" id="certapp">
   <h3>List of All Certifications</h3>
-  <div class="certList" v-for="c in certList">
+  <div class="certList" v-for="c in certList" v-on:click="activeCert = c">
     <span class="certificationID"> Certification ID: {{ c.certificationID }}</span>,<br/>
     <span class="agency"> Certification Agency: {{ c.agency }}</span>,<br/>
     <span class="certificationName">Certification Name: {{c.certificationName }}</span>,<br/>
