@@ -16,8 +16,7 @@ $stmt = $db->prepare($sql =
   WHERE empID = ?');
   // 'VALUES (?, ?, ?)'
 
-$stmt->execute([
-  $_POST('certificationID')]);
+$stmt->execute([$_POST['empID']]);
 
 $delperson = $stmt->fetchAll();
 

@@ -18,6 +18,22 @@ var waitingApp = new Vue({
         stationNum: '',
         active: '',
         certifications: ''
+      },
+      deletePtForm: {
+        fname: '',
+        lname: '',
+        address: '',
+        mobilePhone: '',
+        workPhone: '',
+        email: '',
+        dob: '',
+        startDate: '',
+        gender: '',
+        position: '',
+        radioNum: '',
+        stationNum: '',
+        active: '',
+        certifications: ''
       }
   },
   methods:{
@@ -47,6 +63,38 @@ var waitingApp = new Vue({
       console.log("Creating (POSTing)...I");
       console.log(this.newPtForm);
     },
+
+    deletePt( evt) {
+      fetch('api/members/delete.php', {
+        method: 'POST',
+        body: JSON.stringify(this.deletePtForm),
+        headers: {
+          "Content-Type": "application/json; charset=utf-8"
+        }
+        })
+        .then( response => response.json() )
+        .then( json => {
+          console.log(this.deletePtForm);
+          //
+          });
+        console.log("Deleting Member...!");
+        },
+
+    editPt( evt ) {
+      fetch('api/members/edit.php', {
+        method: 'POST',
+        body: JSON.stringify(this.editPtForm),
+        headers: {
+          "Content-Type": "application/json; charset=utf-8"
+        }
+      })
+      .then( response => response.json() )
+      .then( json => {
+        console.log(editPtForm);
+      });
+      console.log("Updating Pt...!")
+    },
+
     newUserData() {
       return {
         fname: '',
