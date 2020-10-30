@@ -78,7 +78,7 @@ var app = new Vue({
           //
           });
         console.log("Deleting Certification...!");
-        })
+        }),
     
     editCert( evt ) {
       fetch('api/certifications/edit.php', {
@@ -94,7 +94,7 @@ var app = new Vue({
         //this.editedCert = "Certification " + this.editCertForm['certificationID']+" updated: "+this.editCertForm['certificationName'],
       });
       console.log("Updating Cert...!")
-    }
+    },
     created(){
       this.fetchCert();
         } 
