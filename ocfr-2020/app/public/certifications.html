@@ -70,7 +70,7 @@
         <div>
           <h3>Delete Certification</h3>
           <form method="post" v-on:submit.prevent="deleteCert">
-            <label for="certificationID">Enter Certification ID</label>
+            <label for="certificationID">Certification ID</label>
             <input type="integer" id="certificationID" name="certificationID" v-model="deleteCertForm.certificationID" required></input><br>
             <!-- <button class="btn btn-lg btn-primary btn-block" type="submit">Submit</button> -->
             <button type="submit" class="btn btn-primary">Delete</button>
@@ -79,15 +79,15 @@
         <div>
           <h3>Edit Certification</h3>
           <form method="post" v-on:submit.prevent="editCert">
-            <label for="certificationID">Enter Certification ID:</label>
+            <label for="certificationID">Certification ID:</label>
             <input type="integer" id="certificationID" name="certificationID" v-model="editCertForm.certificationID" required></input><br>
-            <label for="agency">Enter Edited Certification Agency:</label>
+            <label for="agency">Certification Agency:</label>
             <input type="text" id="agency" name="agency" v-model="editCertForm.agency" required></input><br>
-            <label for="certificationName">Enter Certification Name</label>
+            <label for="certificationName">Certification Name</label>
             <input type="text" id="certificationName" name="certificationName" v-model="editCertForm.certificationName" required></input><br>
-            <label for="certificationID">Enter Expiration Date</label>
+            <label for="certificationID">Expiration Date</label>
             <input type="integer" id="expDate" name="expDate" v-model="editCertForm.expDate" required></input><br>
-            <button type="submit" class="btn btn-primary">Edit</button>
+            <button type="submit" class="btn btn-primary">Update</button>
           </form>
         </div>
 </div>
