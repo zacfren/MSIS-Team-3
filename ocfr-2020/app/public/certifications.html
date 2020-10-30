@@ -37,16 +37,18 @@
     </nav>
 
 <div class="container-fluid" id="certapp">
-        <div class="row">
+  <h3>List of All Certifications</h3>
+  <div class="certList" v-for="c in certList">
+    <span class="certificationID"> Certification ID: {{ c.certificationID }}</span>,<br/>
+    <span class="agency"> Certification Agency: {{ c.agency }}</span>,<br/>
+    <span class="certificationName">Certification Name: {{c.certificationName }}</span>,<br/>
+    <span class="expDate">Expiration Period: {{c.expDate }}</span>
+  </div>
+</div>
           <!-- <div id="cardPaneLeft" class="col cardPane cardPaneLeft"> -->
-          <h3>Add New Certification</h3>
-            <form method="post" v-on:submit.prevent="createCert()">
+          <form method="post" v-on:submit.prevent="createCert()"></form>
+            <h3>Add Certification</h3>
               <div class="certification">
-                  <div class="form-group">
-                    <label for="certificationID">Certification ID</label><br>
-                      <input type="text" v-model="newCert.certificationID" class="form-control" placeholder="1"><br>
-                  </div>
-
                   <div class="form-group">
                     <label for="agency">Certification Agency</label><br>
                       <input type="text" v-model="newCert.agency" class="form-control" id="agency" placeholder="American Red Cross"><br>
@@ -63,17 +65,16 @@
                   </div>
               </div>
                     <input type="submit" value="Create Certification" class="btn btn-primary">
-            </form>
-        </div>
-        <div class="row">
-        <h3>List of All Certifications</h3>
-          <div class="certList" v-for="c in certList">
-            <span class="certificationID"> Certification ID: {{ c.certificationID }}</span>,<br/>
-            <span class="agency"> Certification Agency: {{ c.agency }}</span>,<br/>
-            <span class="certificationName">Certification Name: {{c.certificationName }}</span>,<br/>
-            <span class="expDate">Expiration Period: {{c.expDate }}</span>
-          </div>
-        </div>
+          </form>
+          <h3>Delete Certification</h3>
+          <form method="post" v-on:submit.prevent="deleteCert">
+            <label for="certificationID">Enter Certification ID</label>
+            <input type="integer" id="certificationID" name="certificationID" v-model="deleteCertForm.certificationID" required></input><br>
+            <button class="btn btn-lg btn-primary btn-block" type="submit">Submit</button>
+          </form>
+          <h3>Edit Certification</h3>
+          <form method="post" v-on:submit.prevent="editCert"></form>
+    <div 
 </div>
         <br/>
     <!-- END content -->
