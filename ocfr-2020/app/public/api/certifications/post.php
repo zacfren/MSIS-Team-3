@@ -20,7 +20,7 @@ $stmt->execute([
   // $certificationID,
   $_POST['agency'],
   $_POST['certificationName'],
-  $_POST['expDate'],
+  $_POST['expDate']
 ]);
 
 // If needed, get auto-generated PK from DB
