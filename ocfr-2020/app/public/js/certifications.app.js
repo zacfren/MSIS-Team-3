@@ -33,7 +33,7 @@ var app = new Vue({
         expDate: ''
       }
     },
-    
+
     //get api
     fetchCert(){
       fetch('api/certifications/')
@@ -56,7 +56,7 @@ var app = new Vue({
       })
       .then( response => response.json())
       .then( json => {
-        console.log("Returned from post:", json[0]);
+        console.log("Returned from post:", json);
         this.certList.push(json[0]);
         this.newCertForm = this.newCertData();
       });
@@ -79,7 +79,7 @@ var app = new Vue({
           });
         console.log("Deleting Certification...!");
         },
-    
+
     editCert( evt ) {
       fetch('api/certifications/edit.php', {
         method: 'POST',
@@ -97,6 +97,6 @@ var app = new Vue({
     },
     created(){
       this.fetchCert();
-        } 
+        }
   }
 })
