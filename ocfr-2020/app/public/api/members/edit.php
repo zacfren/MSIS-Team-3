@@ -13,10 +13,8 @@ $db = DbConnection::getConnection();
 // Note the use of parameterized statements to avoid injection
 
 // ADD REST OF FIELDS
-$stmt = $db->prepare(
-  $sql = 'UPDATE person SET fname = ?, lname = ?, email = ? WHERE empID=?'
-);
-  $stmt->execute([ $_POST['fname'], $_POST['lname'], $_POST['email'], $_POST['empID']]);
+$stmt = $db->prepare($sql = 'UPDATE person SET fname = ?, lname = ?, address = ? WHERE empID=?');
+  $stmt->execute([$_POST['fname'], $_POST['lname'], $_POST['address'], $_POST['empID']]);
 
 $person = $stmt->fetchAll();
 $json = json_encode($person, JSON_PRETTY_PRINT);
