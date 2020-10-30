@@ -34,16 +34,3 @@ nav,
 .cardPaneRight{
   border-left: 1px solid rgb(77,55,41);
 }
-
-.patientCard {
-  margin: 4px;
-  padding: 4px 8px;
-  border: 1px solid #999;
-  border-radius: 5px;
-  background-color: white;
-}
-
-
-.patientCard .lastName {
-  font-weight:bold;
-}
