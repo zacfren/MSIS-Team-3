@@ -39,18 +39,17 @@
 <div id="certapp">
   <h3>List of All Certifications</h3>
   <div class="patientCard" v-for="c in certList" v-on:click="activeCert = c">
-    <span class="agency">Certification Agency: {{ c.agency }}</span>
-    <br>
-    <span class="certificationName">Certification Name: {{ c.certificationName }}</span>
-    <br>
-    <span class="expDate">Expiration Period: {{ c.expDate }}</span>
-    <br>
-  </div>
+    <span class="agency"> Certification Agency: {{ c.agency }}</span>,<br>
+    <span class="certificationName">Certification Name: {{c.certificationName }}</span>,<br>
+    <span class="expDate">Expiration Period: {{c.expDate }}</span>
+  </div><br>
           <!-- <div id="cardPaneLeft" class="col cardPane cardPaneLeft"> -->
         <div>
-          <div class="certification">
-            <form method="post" v-on:submit.prevent="createCert()">
-              <h3>Add Certification</h3>
+
+          <form method="post" v-on:submit.prevent="createCert()">
+            <h3>Add Certification</h3>
+              <div class="certification">
+
                   <div class="form-group">
                     <label for="agency">Certification Agency</label><br>
                       <input type="text" v-model="newCertForm.agency" class="form-control" id="agency" placeholder="American Red Cross"><br>
@@ -66,7 +65,7 @@
                     <input type="text" v-model="newCertForm.expDate" class="form-control" id="expDate" placeholder="2 years">
                   </div>
                   <button type="submit" class="btn btn-primary">Add</button>
-            </form>
+          </form>
         </div>
         </div><br>
         <div>
