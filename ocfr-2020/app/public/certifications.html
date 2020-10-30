@@ -36,7 +36,14 @@
       </div>
     </nav>
 
-
+<div id="certapp">
+  <h3>List of All Certifications</h3>
+  <div class="certList" v-for="c in certList" v-on:click="activeCert = c">
+    <span class="certificationID"> Certification ID: {{ c.certificationID }}</span>,<br/>
+    <span class="agency"> Certification Agency: {{ c.agency }}</span>,<br/>
+    <span class="certificationName">Certification Name: {{c.certificationName }}</span>,<br/>
+    <span class="expDate">Expiration Period: {{c.expDate }}</span>
+  </div><br>
           <!-- <div id="cardPaneLeft" class="col cardPane cardPaneLeft"> -->
           <form method="post" v-on:submit.prevent="createCert()"></form>
             <h3>Add Certification</h3>
@@ -57,27 +64,28 @@
                   </div>
               </div>
                     <input type="submit" value="Create Certification" class="btn btn-primary">
-          </form>
-          <br><br><br>
+          </form><br>
+
           <h3>Delete Certification</h3>
           <form method="post" v-on:submit.prevent="deleteCert">
             <label for="certificationID">Enter Certification ID</label>
             <input type="integer" id="certificationID" name="certificationID" v-model="deleteCertForm.certificationID" required></input><br>
             <button class="btn btn-lg btn-primary btn-block" type="submit">Submit</button>
-          </form>
-          <br><br>
+          </form><br>
+
           <h3>Edit Certification</h3>
-          <form method="post" v-on:submit.prevent="editCert"></form>
-          <br>
-          <div class="container-fluid" id="certapp">
-          <h3>List of All Certifications</h3>
-          <div class="certList" v-for="c in certList">
-            <span class="certificationID"> Certification ID: {{ c.certificationID }}</span>,<br/>
-            <span class="agency"> Certification Agency: {{ c.agency }}</span>,<br/>
-            <span class="certificationName">Certification Name: {{c.certificationName }}</span>,<br/>
-            <span class="expDate">Expiration Period: {{c.expDate }}</span>
-          </div>
-        </div>
+          <form method="post" v-on:submit.prevent="editCert">
+            <label for="certificationID">Enter Certification ID:</label>
+            <input type="integer" id="certificationID" name="certificationID" v-model="editCertForm.certificationID" required></input><br>
+            <label for="agency">Enter Edited Certification Agency:</label>
+            <input type="text" id="agency" name="agency" v-model="editCertForm.agency" required></input><br>
+            <label for="certificationName">Enter Certification Name</label>
+            <input type="text" id="certificationName" name="certificationName" v-model="editCertForm.certificationName" required></input><br>
+            <label for="certificationID">Enter Expiration Date</label>
+            <input type="integer" id="expDate" name="expDate" v-model="editCertForm.expDate" required></input><br>
+          </form>
+</div>
+        <br/>
     <!-- END content -->
 
     <!-- Footer? Insert here -->
@@ -89,6 +97,6 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
 
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
-    <script src="js/certifications.app.js"></script>
+    <script src="js/certification.app.js"></script>
   </body>
 </html>
