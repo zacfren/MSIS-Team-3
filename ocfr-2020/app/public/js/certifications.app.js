@@ -87,7 +87,7 @@ var app = new Vue({
       })
       .then( response => response.json() )
       .then( json => {
-        console.log(editCertForm);
+        console.log(this.editCertForm);
         //this.editedCert = "Certification " + this.editCertForm['certificationID']+" updated: "+this.editCertForm['certificationName'],
       });
       console.log("Updating Cert...!")

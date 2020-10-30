@@ -46,40 +46,45 @@
           <!-- <div id="cardPaneLeft" class="col cardPane cardPaneLeft"> -->
         <div>
 
-          <form method="post" v-on:submit.prevent="createCert()">
-            <h3>Add Certification</h3>
-              <div class="certification">
+
+  <!-- <div class="certification"> -->
+  <div class="certification">
+    <form method="post" v-on:submit.prevent="createCert()">
+        <h3>Add Certification</h3>
+
+      <div class="form-group">
+        <label for="agency">Certification Agency</label><br>
+        <input type="text" v-model="newCertForm.agency" class="form-control" id="agency" placeholder="American Red Cross"><br>
+      </div>
+
 
                   <div class="form-group">
                     <label for="agency">Certification Agency</label><br>
                       <input type="text" v-model="newCertForm.agency" class="form-control" id="agency" placeholder="American Red Cross"><br>
                   </div>
 
-                  <div class="form-group">
-                    <label for="certificationName">Certification Name</label><br>
-                      <input type="text" v-model="newCertForm.certificationName" class="form-control" id="certificationName" placeholder="CPR"><br>
-                  </div>
 
-                  <div class="form-group">
-                    <label for="expDate">Expiration Period</label>
-                    <input type="text" v-model="newCertForm.expDate" class="form-control" id="expDate" placeholder="2 years">
-                  </div>
-                  <button type="submit" class="btn btn-primary">Add</button>
-          </form>
-        </div>
-        </div><br>
-        <div>
-          <h3>Delete Certification</h3>
-          <form method="post" v-on:submit.prevent="deleteCert">
-            <label for="certificationID">Certification ID</label>
-            <input type="integer" id="certificationID" name="certificationID" v-model="deleteCertForm.certificationID" required></input><br>
+      <div class="form-group">
+        <label for="expDate">Expiration Period</label>
+        <input type="text" v-model="newCertForm.expDate" class="form-control" id="expDate" placeholder="2 years">
+      </div>
+      <button type="submit" class="btn btn-primary">Add</button>
+    </form>
+<br>
+    <form method="post" v-on:submit.prevent="deleteCert">
+    <h3>Delete Certification</h3>
+      <div class="form-group">
+        <label for="certificationID">Certification ID</label>
+        <input type="integer" id="certificationID" name="certificationID" v-model="deleteCertForm.certificationID" required></input>
+      </div>
             <!-- <button class="btn btn-lg btn-primary btn-block" type="submit">Submit</button> -->
-            <button type="submit" class="btn btn-primary">Delete</button>
-          </form>
-        </div><br>
-        <div>
-          <h3>Edit Certification</h3>
-          <form method="post" v-on:submit.prevent="editCert">
+      <button type="submit" class="btn btn-primary">Delete</button>
+    </form>
+<br>
+    <form method="post" v-on:submit.prevent="editCert">
+        <h3>Edit Certification</h3>
+      <div class="form-group">
+
             <label for="certificationID">Certification ID</label>
             <input type="integer" id="certificationID" name="certificationID" v-model="editCertForm.certificationID" required></input><br>
             <label for="agency">Certification Agency</label>
