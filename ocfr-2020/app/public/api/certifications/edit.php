@@ -11,7 +11,9 @@ $db = DbConnection::getConnection();
 
 // Step 2: Create & run the query
 // Note the use of parameterized statements to avoid injection
-$stmt = $db->prepare($sql = 'UPDATE certification SET agency = ?, certificationName = ?, expDate = ? WHERE certificationID=?');
+$stmt = $db->prepare($sql = 'UPDATE certification 
+SET agency = ?, certificationName = ?, expDate = ? 
+WHERE certificationID=?');
   $stmt->execute([$_POST['agency'], $_POST['certificationName'], $_POST['expDate'], $_POST['certificationID']]);
 
 $certification = $stmt->fetchAll();
