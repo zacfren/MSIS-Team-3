@@ -62,15 +62,16 @@
                     <label for="expDate">Expiration Period</label>
                     <input type="text" v-model="newCert.expDate" class="form-control" id="expDate" placeholder="2 years">
                   </div>
-              </div>
-                    <input type="submit" value="Create Certification" class="btn btn-primary">
+              <input type="submit" value="Add Certification" class="button">
+            </div>
           </form><br>
 
           <h3>Delete Certification</h3>
           <form method="post" v-on:submit.prevent="deleteCert">
             <label for="certificationID">Enter Certification ID</label>
             <input type="integer" id="certificationID" name="certificationID" v-model="deleteCertForm.certificationID" required></input><br>
-            <button class="btn btn-lg btn-primary btn-block" type="submit">Submit</button>
+            <!-- <button class="btn btn-lg btn-primary btn-block" type="submit">Submit</button> -->
+          <input type="submit" value="Delete Certification" class="button">
           </form><br>
 
           <h3>Edit Certification</h3>
@@ -83,6 +84,7 @@
             <input type="text" id="certificationName" name="certificationName" v-model="editCertForm.certificationName" required></input><br>
             <label for="certificationID">Enter Expiration Date</label>
             <input type="integer" id="expDate" name="expDate" v-model="editCertForm.expDate" required></input><br>
+          <input type="submit" value="Edit Certification" class="button">
           </form>
 </div>
         <br/>
