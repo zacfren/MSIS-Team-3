@@ -24,7 +24,7 @@
             <a class="nav-link" href="index.html">Home</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="members.html">Members<span class="sr-only">(current)</span></a>
+            <a class="nav-link" href="members.html">Members</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="certifications.html">Certifications</a>
@@ -42,14 +42,31 @@
 <!-- v-on:submit.prevent="createUser()" -->
 
           <div id="cardPaneLeft">
+            <h3>List of All Members</h3>
+            <div class="patientCard" v-for="pt in ptList" v-on:click="activePt = pt">
+              <span class="fname">First Name: {{ pt.fname }}</span>
+              <span class="lname">Last Name: {{ pt.lname }}</span>
+              <span class="address">Address: {{ pt.address }}</span>
+              <span class="mobilePhone">mobile: {{ pt.mobilePhone }}</span>
+              <span class="workPhone">work: {{ pt.workPhone }}</span>
+              <span class="email">email: {{ pt.email }}</span>
+              <span class="position">position: {{ pt.position }}</span>
+              <span class="radioNum">radio number: {{ pt.radioNum }}</span>
+              <span class="stationNum">station: {{ pt.stationNum }}</span>
+              <span class="dob">DOB: {{ pt.dob }}</span>
+              <span class="startDate">Start Date: {{ pt.startDate }}</span>
+              <span class="gender">Gender: {{ pt.gender }}</span>
+              <span class="active">Active: {{ pt.active }}</span>
+              <span class="Members">Members: {{ pt.Members }}</span>
+            </div>
             <form method="post" v-on:submit.prevent="createUser()">
               <h3>Add New Member Record</h3>
               <div class="person">
 
-              <!-- <div class="form-group"> -->
+            <div class="form-group">
               <label for="fname">First Name</label>
               <input type="text" v-model="newPtForm.fname" class="form-control" id="UserFirstName" placeholder="Tom">
-            <!-- </div> -->
+            </div>
 
             <div class="form-group">
               <label for="lname">Last Name</label>
@@ -119,33 +136,38 @@
             </div>
 
             <div class="form-group">
-              <label for="certifications">Certifications</label>
-              <input type="text" v-model="newPtForm.certifications" class="form-control" id="certifications" placeholder="Paramedic">
+              <label for="Members">Members</label>
+              <input type="text" v-model="newPtForm.Members" class="form-control" id="Members" placeholder="Paramedic">
             </div>
-          </div>
+
           <input type="submit" value="Create User" class="button">
   </form>
+  </div>
 
-            <!-- <button v-on:click="createUser()">Create User</button> -->
 
-            <h3>List of All Members</h3>
+          <div>
+              <h3>Delete Member</h3>
+              <form method="post" v-on:submit.prevent="deletePt()">
+                <label for="empID">Employee ID</label>
+                <input type="integer" id="empID" name="empID" v-model="deletePtForm.empID" required></input><br>
+                <button type="submit" class="btn btn-primary">Delete</button>
+              </form>
+            </div><br>
+            <div>
+              <!-- <h3>Edit Member</h3>
+              <form method="post" v-on:submit.prevent="editPt()">
+                <label for="empID">Member ID</label>
+                <input type="integer" id="empID" name="empID" v-model="editPtForm.empID" required></input><br>
+                <label for="agency">Member Agency</label>
+                <input type="text" id="agency" name="agency" v-model="editPtForm.agency" required></input><br>
+                <label for="MemberName">Member Name</label>
+                <input type="text" id="MemberName" name="MemberName" v-model="editPtForm.MemberName" required></input><br>
+                <label for="empID">Expiration Date</label>
+                <input type="integer" id="expDate" name="expDate" v-model="editPtForm.expDate" required></input><br>
+                <button type="submit" class="btn btn-primary">Update</button>
+              </form>
+            </div> -->
 
-            <div class="patientCard" v-for="pt in ptList" v-on:click="activePt = pt">
-              <span class="fname">First Name: {{ pt.fname }}</span>
-              <span class="lname">Last Name: {{ pt.lname }}</span>
-              <span class="address">Address: {{ pt.address }}</span>
-              <span class="mobilePhone">mobile: {{ pt.mobilePhone }}</span>
-              <span class="workPhone">work: {{ pt.workPhone }}</span>
-              <span class="email">email: {{ pt.email }}</span>
-              <span class="position">position: {{ pt.position }}</span>
-              <span class="radioNum">radio number: {{ pt.radioNum }}</span>
-              <span class="stationNum">station: {{ pt.stationNum }}</span>
-              <span class="dob">DOB: {{ pt.dob }}</span>
-              <span class="startDate">Start Date: {{ pt.startDate }}</span>
-              <span class="gender">Gender: {{ pt.gender }}</span>
-              <span class="active">Active: {{ pt.active }}</span>
-              <span class="certifications">Certifications: {{ pt.certifications }}</span>
-            </div>
 </div></div>
 </div>
     <!-- END content -->

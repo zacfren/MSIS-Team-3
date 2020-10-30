@@ -11,10 +11,10 @@ $vars = [];
 
 if (isset($_GET['empID'])) {
 //   // This is an example of a parameterized query
-$sql = 'SELECT * FROM person WHERE empID = ?';
+$sql = 'SELECT * FROM person
+WHERE empID = ?';
 $vars = [ $_GET['empID'] ];
 }
-
 
 
 $stmt = $db->prepare($sql);
