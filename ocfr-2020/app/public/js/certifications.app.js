@@ -22,16 +22,15 @@ var app = new Vue({
     editedCert: ''
   },
 
+  newCertData() {
+    return {
+      agency: '',
+      certificationName: '',
+      expDate: ''
+    }
+  },
 
   methods: {
-    newCertData() {
-      return {
-        agency: '',
-        certificationName: '',
-        expDate: ''
-      }
-    },
-
     //get api
     fetchCert(){
       fetch('api/certifications/')
@@ -92,8 +91,9 @@ var app = new Vue({
       });
       console.log("Updating Cert...!")
     },
-    created(){
-      this.fetchCert();
-        }
+
+  },
+  created(){
+    this.fetchCert();
   }
-})
+});
