@@ -36,15 +36,7 @@
       </div>
     </nav>
 
-<div class="container-fluid" id="certapp">
-  <h3>List of All Certifications</h3>
-  <div class="certList" v-for="c in certList">
-    <span class="certificationID"> Certification ID: {{ c.certificationID }}</span>,<br/>
-    <span class="agency"> Certification Agency: {{ c.agency }}</span>,<br/>
-    <span class="certificationName">Certification Name: {{c.certificationName }}</span>,<br/>
-    <span class="expDate">Expiration Period: {{c.expDate }}</span>
-  </div>
-</div>
+
           <!-- <div id="cardPaneLeft" class="col cardPane cardPaneLeft"> -->
           <form method="post" v-on:submit.prevent="createCert()"></form>
             <h3>Add Certification</h3>
@@ -66,17 +58,26 @@
               </div>
                     <input type="submit" value="Create Certification" class="btn btn-primary">
           </form>
+          <br><br><br>
           <h3>Delete Certification</h3>
           <form method="post" v-on:submit.prevent="deleteCert">
             <label for="certificationID">Enter Certification ID</label>
             <input type="integer" id="certificationID" name="certificationID" v-model="deleteCertForm.certificationID" required></input><br>
             <button class="btn btn-lg btn-primary btn-block" type="submit">Submit</button>
           </form>
+          <br><br>
           <h3>Edit Certification</h3>
           <form method="post" v-on:submit.prevent="editCert"></form>
-    <div 
-</div>
-        <br/>
+          <br>
+          <div class="container-fluid" id="certapp">
+          <h3>List of All Certifications</h3>
+          <div class="certList" v-for="c in certList">
+            <span class="certificationID"> Certification ID: {{ c.certificationID }}</span>,<br/>
+            <span class="agency"> Certification Agency: {{ c.agency }}</span>,<br/>
+            <span class="certificationName">Certification Name: {{c.certificationName }}</span>,<br/>
+            <span class="expDate">Expiration Period: {{c.expDate }}</span>
+          </div>
+        </div>
     <!-- END content -->
 
     <!-- Footer? Insert here -->
