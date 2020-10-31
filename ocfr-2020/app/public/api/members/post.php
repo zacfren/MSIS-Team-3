@@ -25,6 +25,7 @@ $stmt = $db->prepare(
 );
 
 $stmt->execute([
+  // $empID,
   $_POST['fname'],
   $_POST['lname'],
   $_POST['address'],

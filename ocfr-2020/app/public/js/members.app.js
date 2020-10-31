@@ -19,7 +19,8 @@ var waitingApp = new Vue({
         active: '',
         certifications: ''
       },
-      deletePtForm: {}
+      deletePtForm: {},
+      editPtForm: {},
   },
   methods:{
     fetchUser(){
@@ -75,7 +76,7 @@ var waitingApp = new Vue({
       })
       .then( response => response.json() )
       .then( json => {
-        console.log(editPtForm);
+        console.log(this.editPtForm);
       });
       console.log("Updating Pt...!")
     },
