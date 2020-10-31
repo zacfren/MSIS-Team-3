@@ -4,6 +4,8 @@
     "license": "private",
     "authors": [{
         "name": "Zac French"
+        "name": "Ben Kelly"
+        "name": "Preston Flamion"
     }],
     "require": {
       "ramsey/uuid": "^4.1"
