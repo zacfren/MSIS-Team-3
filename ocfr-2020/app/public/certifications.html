@@ -8,11 +8,12 @@
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
     <!-- my custom CSS goes here -->
-    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/styles1.css">
+    <link rel="stylesheet" href="css/normalize.css">
 
     <title>OCFR Project</title>
   </head>
-  <body>
+<body>
     <nav class= "indexNav">
 
   <section class="bottom">
@@ -34,38 +35,37 @@
   <h3>List of All Certifications</h3>
   <div class="patientCard" v-for="c in certList" v-on:click="activeCert = c">
     <span class="agency"> Certification Agency: {{ c.agency }}</span>,<br>
-    <span class="certificationName">Certification Name: {{c.certificationName }}</span>,<br>
-    <span class="expDate">Expiration Period: {{c.expDate }}</span>
-  </div><br>
+    <span class="certificationName">Certification Name: {{ c.certificationName }}</span>,<br>
+    <span class="expDate">Expiration Period: {{ c.expDate }}</span>
+  </div>
           <!-- <div id="cardPaneLeft" class="col cardPane cardPaneLeft"> -->
 
 
   <!-- <div class="certification"> -->
-  <div class="certification">
+<div class="certification">
+    <h3>Add Certification</h3>
     <form method="post" v-on:submit.prevent="createCert()">
-        <h3>Add Certification</h3>
 
       <div class="form-group">
         <label for="agency">Certification Agency</label><br>
         <input type="text" v-model="newCertForm.agency" class="form-control" id="agency" placeholder="American Red Cross"><br>
       </div>
 
-
-                  <div class="form-group">
-                    <label for="certificationName">Certification Name</label><br>
-                      <input type="text" v-model="newCertForm.certificationName" class="form-control" id="certificationName" placeholder="CPR"><br>
-                  </div>
-
+      <div class="form-group">
+        <label for="certificationName">Certification Name</label><br>
+        <input type="text" v-model="newCertForm.certificationName" class="form-control" id="certificationName" placeholder="CPR"><br>
+      </div>
 
       <div class="form-group">
         <label for="expDate">Expiration Period</label>
         <input type="text" v-model="newCertForm.expDate" class="form-control" id="expDate" placeholder="2 years">
       </div>
-      <button type="submit" class="btn btn-primary">Add</button>
+
+      <input type="submit" value="Create Certification" class="button">
     </form>
 <br>
-    <form method="post" v-on:submit.prevent="deleteCert">
     <h3>Delete Certification</h3>
+    <form method="post" v-on:submit.prevent="deleteCert">
       <div class="form-group">
         <label for="certificationID">Certification ID</label>
         <input type="integer" id="certificationID" name="certificationID" v-model="deleteCertForm.certificationID" required></input>
@@ -74,21 +74,24 @@
       <button type="submit" class="btn btn-primary">Delete</button>
     </form>
 <br>
+    <h3>Edit Certification</h3>
     <form method="post" v-on:submit.prevent="editCert">
-        <h3>Edit Certification</h3>
-      <div class="form-group">
-
+        <div class="form-group">
             <label for="certificationID">Certification ID</label>
-            <input type="integer" id="certificationID" name="certificationID" v-model="editCertForm.certificationID" required></input><br>
+            <input type="integer" id="certificationID" name="certificationID" v-model="editCertForm.certificationID" required></input>
+            <br>
             <label for="agency">Certification Agency</label>
-            <input type="text" id="agency" name="agency" v-model="editCertForm.agency" required></input><br>
+            <input type="text" id="agency" name="agency" v-model="editCertForm.agency" required></input>
+            <br>
             <label for="certificationName">Certification Name</label>
-            <input type="text" id="certificationName" name="certificationName" v-model="editCertForm.certificationName" required></input><br>
+            <input type="text" id="certificationName" name="certificationName" v-model="editCertForm.certificationName" required></input>
+            <br>
             <label for="certificationID">Expiration Date</label>
-            <input type="integer" id="expDate" name="expDate" v-model="editCertForm.expDate" required></input><br>
-            <button type="submit" class="btn btn-primary">Update</button>
-          </form>
+            <input type="integer" id="expDate" name="expDate" v-model="editCertForm.expDate" required></input>
+            <br>
         </div>
+        <button type="submit" class="btn btn-primary">Update</button>
+    </form>
 </div>
 </div>
         <br>
