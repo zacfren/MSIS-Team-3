@@ -1,6 +1,6 @@
 version: "3"
 services:
-  team3_ocfr:
+  team3ocfr:
     build: .
     ports:
       - "8080:80"
