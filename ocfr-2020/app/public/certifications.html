@@ -34,8 +34,10 @@
 <div id="certapp">
   <h3>List of All Certifications</h3>
   <div class="patientCard" v-for="c in certList" v-on:click="activeCert = c">
-    <span class="agency"> Certification Agency: {{ c.agency }}</span>,<br>
-    <span class="certificationName">Certification Name: {{ c.certificationName }}</span>,<br>
+    <span class="agency">Certification Agency: {{ c.agency }}</span>
+    <br>
+    <span class="certificationName">Certification Name: {{ c.certificationName }}</span>
+    <br>
     <span class="expDate">Expiration Period: {{ c.expDate }}</span>
   </div>
           <!-- <div id="cardPaneLeft" class="col cardPane cardPaneLeft"> -->
@@ -63,7 +65,9 @@
 
       <input type="submit" value="Create Certification" class="button">
     </form>
+
 <br>
+
     <h3>Delete Certification</h3>
     <form method="post" v-on:submit.prevent="deleteCert">
       <div class="form-group">
@@ -73,7 +77,9 @@
             <!-- <button class="btn btn-lg btn-primary btn-block" type="submit">Submit</button> -->
       <button type="submit" class="btn btn-primary">Delete</button>
     </form>
+
 <br>
+
     <h3>Edit Certification</h3>
     <form method="post" v-on:submit.prevent="editCert">
         <div class="form-group">
