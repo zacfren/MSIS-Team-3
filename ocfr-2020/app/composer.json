@@ -3,8 +3,8 @@
     "description": "OCFR project",
     "license": "private",
     "authors": [{
-        "name": "Zac French"
-        "name": "Ben Kelly"
+        "name": "Zac French",
+        "name": "Ben Kelly",
         "name": "Preston Flamion"
     }],
     "require": {
