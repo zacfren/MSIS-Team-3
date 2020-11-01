@@ -67,7 +67,7 @@
 <br>
 
     <h3>Delete Certification</h3>
-    <form method="post" v-on:submit.prevent="deleteCert">
+    <form method="post" v-on:submit.prevent="deleteCert()">
       <div class="form-group">
         <label for="certificationID">Certification ID</label>
         <input type="integer" id="certificationID" name="certificationID" v-model="deleteCertForm.certificationID" required></input>
@@ -79,7 +79,7 @@
 <br>
 
     <h3>Edit Certification</h3>
-    <form method="post" v-on:submit.prevent="editCert">
+    <form method="post" v-on:submit.prevent="editCert()">
         <div class="form-group">
             <label for="certificationID">Certification ID</label>
             <input type="integer" id="certificationID" name="certificationID" v-model="editCertForm.certificationID" required></input>
