@@ -1,0 +1,16 @@
+{
+    "name": "zacfren/MSIS-Team-3",
+    "description": "OCFR project",
+    "license": "private",
+    "authors": [{
+        "name": "Zac French",
+        "name": "Ben Kelly",
+        "name": "Preston Flamion"
+    }],
+    "require": {
+      "ramsey/uuid": "^4.1"
+    },
+    "autoload": {
+        "classmap": ["class/DbConnection.php"]
+    }
+}
