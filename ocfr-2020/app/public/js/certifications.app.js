@@ -16,10 +16,7 @@ var app = new Vue({
     },
 
     deleteCertForm: {},
-    deletedCert: '',
-
     editCertForm: {},
-    editedCert: ''
   },
 
 
