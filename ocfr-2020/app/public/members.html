@@ -137,7 +137,7 @@
           <input type="text" v-model="newPtForm.Members" class="form-control" id="Members" placeholder="Paramedic">
         </div>
 
-        <input type="submit" value="Create Member" class="button">
+        <button type="submit" class="btn btn-primary">Add Member</button>
       </form>
     </div>
 
@@ -149,7 +149,7 @@
           <label for="empID">Employee ID</label>
           <input type="integer" id="empID" name="empID" v-model="deletePtForm.empID" required></input><br>
         </div>
-        <input type="submit" value="Delete Member" class="button">
+        <button type="submit" class="btn btn-primary">Delete Member</button>
       </form>
 
 <br>
@@ -170,7 +170,7 @@
             <input type="text" id="email" name="email" v-model="editPtForm.email" required></input>
             <br>
           </div>
-          <input type="submit" value="Edit Member" class="button">
+          <button type="submit" class="btn btn-primary">Update Member</button>
       </form>
   <!-- </div> -->
 </div>
