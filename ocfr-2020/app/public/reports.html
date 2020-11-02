@@ -1,3 +1,170 @@
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <!-- my custom CSS goes here -->
+    <link rel="stylesheet" href="css/styles1.css">
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="icon" href="data:;base64,=">
+
+    <title>OCFR Project</title>
+  </head>
+  <body>
+
+    <h1>OCFR</h1>
+  <nav class= "indexNav">
+    <section class="bottom">
+      <a href="index.html">Home</a>
+      <a href="members.html">Members</a>
+      <a href="certifications.html">Certifications</a>
+      <div class="dropdown">
+        <button class="dropbtn">Reports</button>
+        <div class="dropdown-content">
+          <a class="repLink" href="reports.html">Member Report</a>
+          <a class="repLink" href="#">Certification Report</a>
+
+        </div>
+      </div>
+    </section>
+  </nav>
+<h1>Reports</h1>
+<h3>Personnel by Station<h3>
+<div class="container-fluid">
+  <table class="table table-bordered table-striped table-hover table-condensed">
+    <thead>
+      <tr>
+        <th>Station</th>
+        <th>Radio Number</th>
+        <th>First Name</th>
+        <th>Last Name</th>
+        <th>Email</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr class="" v-for="pt in ptList">
+        <td><span class="stationNum">{{ pt.stationNum }}</span></td>
+        <td><span class="radioNum">{{ pt.radioNum }}</span></td>
+        <td><span class="fname">{{ pt.fname }}</span></td>
+        <td><span class="lname">{{ pt.lname }}</span></td>
+        <td><span class="email">{{ pt.email }}</span></td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<!-- <h3>Certifications by Date<h3> NEED TO BE UPDATED!!! -->
+<div class="container-fluid">
+  <table class="table table-bordered table-striped table-hover table-condensed">
+    <thead>
+      <tr>
+        <th>Station</th>
+        <th>Radio Number</th>
+        <th>First Name</th>
+        <th>Last Name</th>
+        <th>Email</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr class="" v-for="pt in ptList">
+        <td><span class="stationNum">{{ pt.stationNum }}</span></td>
+        <td><span class="radioNum">{{ pt.radioNum }}</span></td>
+        <td><span class="fname">{{ pt.fname }}</span></td>
+        <td><span class="lname">{{ pt.lname }}</span></td>
+        <td><span class="email">{{ pt.email }}</span></td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+
+
+
+    <!-- <header class="indexHead">
+      <form action="cert-filter.php" method='post'>
+        Certification Type: <select name="cert-filter">
+          <option value="" disabled selected hidden>Choose A Certification</option>
+          <option value="CPR">CPR</option>
+          <option value="Firefighter">Firefighter</option>
+          <option value="Paramedic">Paramedic</option>
+        </select>
+
+          <input type="submit" value="Filter" Placeholder='Filter'>
+          <a href="reports.html"><button>Reset</button></a>
+      </form>
+    </header> -->
+
+    <!-- <nav class="navbar navbar-expand-md">
+      <a class="navbar-brand" href="#">OCFR</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav">
+          <li class="nav-item active">
+            <a class="nav-link" href="index.html">Home <span class="sr-only">(current)</span></a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="members.html">Members</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="certifications.html">Certifications</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="extra.html">Reports<span class="sr-only">(current)</span></a>
+          </li>
+        </ul>
+      </div>
+    </nav> -->
+
+
+    <!-- <h5>Please select a drop down option to filter expired reports.</h5>
+
+
+
+    			<form action="cert-filter.php" method='post'>
+    				Certification Type: <select name="cert-filter">
+    					<option value="" disabled selected hidden>Choose A Certification</option>
+    					<option value="CPR">CPR</option>
+    					<option value="Firefighter">Firefighter</option>
+    					<option value="Paramedic">Paramedic</option>
+    				</select>
+
+    					<input type="submit" value="Filter" Placeholder='Filter'>
+              <a href="reports.html"><button>Reset</button></a>
+    			</form> -->
+
+
+
+
+
+
+
+
+
+
+
+    <!-- END content -->
+
+    <!-- Footer? Insert here -->
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script src="js/reports.app.js"></script>
+  </body>
+</html>
+=======
 <!doctype html>
 <html lang="en">
   <head>
@@ -81,3 +248,4 @@
     <script src="js/reports.app.js"></script>
   </body>
 </html>
+
