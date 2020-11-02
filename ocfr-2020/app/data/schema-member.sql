@@ -31,11 +31,15 @@ ENGINE=INNODB;
 
 
 
-CREATE TABLE assignCertification
-	(empcertID int PRIMARY KEY auto_increment not null,
-		empID int not null,
-  certificationID int not null,
-	dateAssigned DATE,
+CREATE TABLE reports
+	(reportsID int auto_increment not null,
+    certificationID int not null,
+    empID int not null,
+	fname varchar(50) not null,
+    lname varchar(50) not null,
+    expDate DATE,
+    certificationName varchar(200) not null,
+    PRIMARY KEY (reportsID),
 	FOREIGN KEY (empID) references person(empID),
 	FOREIGN KEY (certificationID) references certification(certificationID)
 )
@@ -44,3 +48,7 @@ ENGINE=INNODB;
 SELECT * FROM person;
 SELECT * FROM certification;
 SELECT * FROM assignCertification;
+
+DROP TABLE person;
+DROP TABLE certification;
+DROP TABLE assignCertification;
