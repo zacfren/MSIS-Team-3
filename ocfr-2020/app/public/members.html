@@ -39,22 +39,46 @@
 
 <div id="cardPaneLeft">
     <h3>List of All Members</h3>
-    <div class="patientCard" v-for="pt in ptList" v-on:click="activePt = pt">
-      <span class="fname">First Name: {{ pt.fname }}</span>
-      <span class="lname">Last Name: {{ pt.lname }}</span>
-      <span class="address">Address: {{ pt.address }}</span>
-      <span class="mobilePhone">mobile: {{ pt.mobilePhone }}</span>
-      <span class="workPhone">work: {{ pt.workPhone }}</span>
-      <span class="email">email: {{ pt.email }}</span>
-      <span class="position">position: {{ pt.position }}</span>
-      <span class="radioNum">radio number: {{ pt.radioNum }}</span>
-      <span class="stationNum">station: {{ pt.stationNum }}</span>
-      <span class="dob">DOB: {{ pt.dob }}</span>
-      <span class="startDate">Start Date: {{ pt.startDate }}</span>
-      <span class="gender">Gender: {{ pt.gender }}</span>
-      <span class="active">Active: {{ pt.active }}</span>
-      <span class="Members">Members: {{ pt.Members }}</span>
-    </div>
+    <table class="table table-bordered table-striped table-hover table-condensed">
+      <thead>
+        <tr>
+          <th>Employee ID</th>
+          <th>First Name</th>
+          <th>Last Name</th>
+          <th>Address</th>
+          <th>Mobile Phone</th>
+          <th>Work Phone</th>
+          <th>Email</th>
+          <th>Position</th>
+          <th>Radio Number</th>
+          <th>Station</th>
+          <th>DOB (YYYY-MM-DD)</th>
+          <th>Start Date (YYYY-MM-DD)</th>
+          <th>Gender</th>
+          <th>Active</th>
+          <th>Members</th>
+        </tr>
+      </thead>
+      <tbody v-for="pt in ptList" v-on:click="activePt = pt">
+        <tr>
+          <td><span class="empID">{{ pt.empID }}</span></td>
+          <td><span class="fname">{{ pt.fname }}</span></td>
+          <td><span class="lname">{{ pt.lname }}</span></td>
+          <td><span class="address">{{ pt.address }}</span></td>
+          <td><span class="mobilePhone">{{ pt.mobilePhone }}</span></td>
+          <td><span class="workPhone">{{ pt.workPhone }}</span></td>
+          <td><span class="email">{{ pt.email }}</span></td>
+          <td><span class="position">{{ pt.position }}</span></td>
+          <td><span class="radioNum">{{ pt.radioNum }}</span></td>
+          <td><span class="stationNum">{{ pt.stationNum }}</span></td>
+          <td><span class="dob">{{ pt.dob }}</span></td>
+          <td><span class="startDate">{{ pt.startDate }}</span></td>
+          <td><span class="gender">{{ pt.gender }}</span></td>
+          <td><span class="active">{{ pt.active }}</span></td>
+          <td><span class="Members">{{ pt.Members }}</span></td>
+        </tr>
+      </tbody>
+    </table>
 
     <div class="person">
       <h3>Add New Member Record</h3>

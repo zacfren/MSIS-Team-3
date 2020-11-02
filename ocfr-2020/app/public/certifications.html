@@ -34,13 +34,24 @@
 
 <div id="certapp">
   <h3>List of All Certifications</h3>
-  <div class="patientCard" v-for="c in certList" v-on:click="activeCert = c">
-    <span class="agency">Certification Agency: {{ c.agency }}</span>
-    <br>
-    <span class="certificationName">Certification Name: {{ c.certificationName }}</span>
-    <br>
-    <span class="expDate">Expiration Period: {{ c.expDate }}</span>
-  </div>
+  <table class="table table-bordered table-striped table-hover table-condensed">
+    <thead>
+      <tr>
+        <th>Certification ID</th>
+        <th>Certification Agency</th>
+        <th>Certification Name</th>
+        <th>Expiration Date (YYYY-MM-DD)</th>
+      </tr>
+    </thead>
+    <tbody v-for="c in certList" v-on:click="activeCert = c">
+      <tr>
+          <td><span class="certificationID">{{ c.certificationID }}</span></td>
+        <td><span class="agency">{{ c.agency }}</span></td>
+        <td><span class="certificationName">{{ c.certificationName }}</span></td>
+        <td><span class="expDate">{{ c.expDate }}</span></td>
+      </tr>
+    </tbody>
+  </table>
 
 <div class="certification">
     <h3>Add Certification</h3>
@@ -57,8 +68,8 @@
       </div>
 
       <div class="form-group">
-        <label for="expDate">Expiration Period</label>
-        <input type="text" v-model="newCertForm.expDate" class="form-control" id="expDate" placeholder="2 years">
+        <label for="expDate">Expiration Date (YYYY-MM-DD)</label>
+        <input type="text" v-model="newCertForm.expDate" class="form-control" id="expDate" placeholder="2021-01-30">
       </div>
 
       <button type="submit" class="btn btn-primary">Add Certification</button>
