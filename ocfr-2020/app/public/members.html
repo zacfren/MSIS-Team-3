@@ -39,24 +39,6 @@
 
 <div id="cardPaneLeft">
     <h3>List of All Members</h3>
-    <div class="patientCard" v-for="pt in ptList" v-on:click="activePt = pt">
-      <span class="fname">First Name: {{ pt.fname }}</span>
-      <span class="lname">Last Name: {{ pt.lname }}</span>
-      <span class="address">Address: {{ pt.address }}</span>
-      <span class="mobilePhone">mobile: {{ pt.mobilePhone }}</span>
-      <span class="workPhone">work: {{ pt.workPhone }}</span>
-      <span class="email">email: {{ pt.email }}</span>
-      <span class="position">position: {{ pt.position }}</span>
-      <span class="radioNum">radio number: {{ pt.radioNum }}</span>
-      <span class="stationNum">station: {{ pt.stationNum }}</span>
-      <span class="dob">DOB: {{ pt.dob }}</span>
-      <span class="startDate">Start Date: {{ pt.startDate }}</span>
-      <span class="gender">Gender: {{ pt.gender }}</span>
-      <span class="active">Active: {{ pt.active }}</span>
-      <span class="Members">Members: {{ pt.Members }}</span>
-    </div>
-
-    <h3>List of All Members</h3>
     <table class="table table-bordered table-striped table-hover table-condensed">
       <thead>
         <tr>
