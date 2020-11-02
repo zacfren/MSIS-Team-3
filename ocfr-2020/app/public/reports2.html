@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <!-- my custom CSS goes here -->
+    <link rel="stylesheet" href="css/styles1.css">
+    <link rel="stylesheet" href="css/normalize.css">
+
+    <title>OCFR Project</title>
+  </head>
+<body>
+    <nav class= "indexNav">
+
+  <section class="bottom">
+    <a href="index.html">Home</a>
+    <a href="members.html">Members</a>
+    <a href="certifications.html">Certifications</a>
+    <div class="dropdown">
+      <button class="dropbtn">Reports</button>
+      <div class="dropdown-content">
+        <a class="repLink" href="reports.html">Certifications Report</a>
+        <a class="repLink" href="reports2.html">Station Report</a>
+
+      </div>
+    </div>
+  </section>
+    </nav>
+
+  <body>
+
+
+<h2>Report of members, organized by Station</h2>
+            <p> <p/>
+        <div class="container-fluid" id="memberReport2">
+
+              <!-- <button v-on:click="yell()">Click Me!</button> -->
+              <table id="taskTable" class="table table-bordered table-striped table-hover table-condensed">
+
+                <thead>
+                  <tr>
+                      <th class="headerSortDown">First Name</th>
+                      <th class="headerSortUp">Last Name</th>
+                      <th class="headerSortDown">Email Address</th>
+                      <th class="headerSortDown">Fire Station Number</th>
+                      <th class="headerSortUp">Radio Number</th>
+                  </tr>
+              </thead>
+
+              <tbody>
+                <tr class="reports2List" v-for="rt in reports2List">
+                    <td><span class="fname">{{reports2List.fname}}</span></td>
+                    <td><span class="lname">{{reports2List.lname}}</span></td>
+                    <td><span class="email">{{reports2List.email}}</span></td>
+                    <td><span class="stationNum">{{reports2List.stationNum}}</span></td>
+                    <td><span class="radioNum">{{reports2List.radioNum}}</span></td>
+                </tr>
+              </tbody>
+                     <tfoot>
+                     <tr>
+                         </tr>
+                     </tfoot>
+                  </table>
+              </div>
+              <!-- END content -->
+
+              <!-- Footer? Insert here -->
+
+              <!-- Optional JavaScript -->
+              <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+              <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+              <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+              <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+
+              <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+              <script src="js/reports2.app.js"></script>
+            </body>
+          </html>
