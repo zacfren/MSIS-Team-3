@@ -12,10 +12,9 @@ nav {
     background-color: #faeed4;
     padding-left:50px;
     padding-right:20px;
-    padding-top:10px;
-    padding-bottom:10px;
+    padding-top:3px;
+    padding-bottom:3px;
     border-bottom: 5px solid #2874A6;
-    margin: 10px;
 }
 
 nav .rightSide {
@@ -114,6 +113,8 @@ nav img {
     margin-right:15px;
     margin-left:15px;
     border:none;
+    padding-top: 3px;
+    padding-bottom: 3px;
 }
 
 .dropdown {
