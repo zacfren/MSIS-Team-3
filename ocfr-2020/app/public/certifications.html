@@ -43,7 +43,7 @@
   </div>
 
   <h3>List of All Certifications</h3>
-  <table class="table table-bordered table-striped table-hover table-condensed" v-for="c in certList" v-on:click="activeCert = c">
+  <table class="table table-bordered table-striped table-hover table-condensed">
     <thead>
       <tr>
         <th>Certification Agency</th>
@@ -51,18 +51,13 @@
         <th>Expiration Period</th>
       </tr>
     </thead>
-    <tbody>
+    <tbody v-for="c in certList" v-on:click="activeCert = c">
       <tr>
         <td><span class="agency">{{ c.agency }}</span></td>
         <td><span class="certificationName">{{ c.certificationName }}</span></td>
         <td><span class="expDate">{{ c.expDate }}</span></td>
       </tr>
     </tbody>
-    <tfoot>
-      <tr>
-        <td></td>
-      </tr>
-    </tfoot>
   </table>
 
 <div class="certification">
