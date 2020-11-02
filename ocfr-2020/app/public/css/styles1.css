@@ -110,8 +110,8 @@ nav img {
     font-size: 22px;
     font-family: 'Viga', sans-serif;
     background-color:transparent;
-    margin-right:15px;
-    margin-left:15px;
+    /* margin-right:15px;
+    margin-left:15px; */
     border:none;
     padding-top: 3px;
     padding-bottom: 3px;
