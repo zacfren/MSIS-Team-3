@@ -36,7 +36,7 @@
 
 <h2>Report of members, organized by Station</h2>
             <p> <p/>
-        <div class="container-fluid" id="memberPage">
+        <div class="container-fluid" id="memberReport2">
 
               <!-- <button v-on:click="yell()">Click Me!</button> -->
               <table id="taskTable" class="table table-bordered table-striped table-hover table-condensed">
@@ -52,12 +52,12 @@
               </thead>
 
               <tbody>
-                <tr class="rt" v-for="rt in reports2List">
-                    <td><span class="fname">{{rt.fname}}</span></td>
-                    <td><span class="lname">{{rt.lname}}</span></td>
-                    <td><span class="email">{{rt.email}}</span></td>
-                    <td><span class="stationNum">{{rt.stationNum}}</span></td>
-                    <td><span class="radioNum">{{rt.radioNum}}</span></td>
+                <tr class="reports2List" v-for="rt in reports2List">
+                    <td><span class="fname">{{reports2List.fname}}</span></td>
+                    <td><span class="lname">{{reports2List.lname}}</span></td>
+                    <td><span class="email">{{reports2List.email}}</span></td>
+                    <td><span class="stationNum">{{reports2List.stationNum}}</span></td>
+                    <td><span class="radioNum">{{reports2List.radioNum}}</span></td>
                 </tr>
               </tbody>
                      <tfoot>
@@ -77,6 +77,6 @@
               <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
 
               <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
-              <script src="js/certifications.app.js"></script>
+              <script src="js/reports2.app.js"></script>
             </body>
           </html>
