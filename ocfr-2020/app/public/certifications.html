@@ -34,15 +34,6 @@
 
 <div id="certapp">
   <h3>List of All Certifications</h3>
-  <div class="patientCard" v-for="c in certList" v-on:click="activeCert = c">
-    <span class="agency">Certification Agency: {{ c.agency }}</span>
-    <br>
-    <span class="certificationName">Certification Name: {{ c.certificationName }}</span>
-    <br>
-    <span class="expDate">Expiration Period: {{ c.expDate }}</span>
-  </div>
-
-  <h3>List of All Certifications</h3>
   <table class="table table-bordered table-striped table-hover table-condensed">
     <thead>
       <tr>
