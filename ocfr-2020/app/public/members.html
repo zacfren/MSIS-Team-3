@@ -60,6 +60,7 @@
     <table class="table table-bordered table-striped table-hover table-condensed">
       <thead>
         <tr>
+          <th>Employee ID</th>
           <th>First Name</th>
           <th>Last Name</th>
           <th>Address</th>
@@ -78,7 +79,8 @@
       </thead>
       <tbody v-for="pt in ptList" v-on:click="activePt = pt">
         <tr>
-          <td><span class="fname">{{ pt.fname }}</span></td>
+          <span class="empID">{{ pt.empID }}</span>
+          <span class="fname">{{ pt.fname }}</span>
           <td><span class="lname">{{ pt.lname }}</span></td>
           <td><span class="address">{{ pt.address }}</span></td>
           <td><span class="mobilePhone">{{ pt.mobilePhone }}</span></td>
