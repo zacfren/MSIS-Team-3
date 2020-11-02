@@ -113,8 +113,9 @@ nav img {
     /* margin-right:15px;
     margin-left:15px; */
     border:none;
-    padding-top: 3px;
+    padding-top: 10px;
     padding-bottom: 3px;
+    margin: 5px;
 }
 
 .dropdown {
