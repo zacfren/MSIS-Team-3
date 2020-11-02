@@ -16,10 +16,7 @@ var app = new Vue({
     },
 
     deleteCertForm: {},
-    deletedCert: '',
-
     editCertForm: {},
-    editedCert: ''
   },
 
 
@@ -91,9 +88,10 @@ var app = new Vue({
         //this.editedCert = "Certification " + this.editCertForm['certificationID']+" updated: "+this.editCertForm['certificationName'],
       });
       console.log("Updating Cert...!")
-    },
+    }
+  },
     created(){
       this.fetchCert();
         }
-  }
+
 })

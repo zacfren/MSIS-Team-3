@@ -10,6 +10,7 @@
     <!-- my custom CSS goes here -->
     <link rel="stylesheet" href="css/styles1.css">
     <link rel="stylesheet" href="css/normalize.css">
+    <link rel="icon" href="data:;base64,=">
 
     <title>OCFR Project</title>
   </head>
@@ -33,13 +34,24 @@
 
 <div id="certapp">
   <h3>List of All Certifications</h3>
-  <div class="patientCard" v-for="c in certList" v-on:click="activeCert = c">
-    <span class="agency">Certification Agency: {{ c.agency }}</span>
-    <br>
-    <span class="certificationName">Certification Name: {{ c.certificationName }}</span>
-    <br>
-    <span class="expDate">Expiration Period: {{ c.expDate }}</span>
-  </div>
+  <table class="table table-bordered table-striped table-hover table-condensed">
+    <thead>
+      <tr>
+        <th>Certification ID</th>
+        <th>Certification Agency</th>
+        <th>Certification Name</th>
+        <th>Expiration Date (YYYY-MM-DD)</th>
+      </tr>
+    </thead>
+    <tbody v-for="c in certList" v-on:click="activeCert = c">
+      <tr>
+          <td><span class="certificationID">{{ c.certificationID }}</span></td>
+        <td><span class="agency">{{ c.agency }}</span></td>
+        <td><span class="certificationName">{{ c.certificationName }}</span></td>
+        <td><span class="expDate">{{ c.expDate }}</span></td>
+      </tr>
+    </tbody>
+  </table>
 
 <div class="certification">
     <h3>Add Certification</h3>
@@ -56,29 +68,29 @@
       </div>
 
       <div class="form-group">
-        <label for="expDate">Expiration Period</label>
-        <input type="text" v-model="newCertForm.expDate" class="form-control" id="expDate" placeholder="2 years">
+        <label for="expDate">Expiration Date (YYYY-MM-DD)</label>
+        <input type="text" v-model="newCertForm.expDate" class="form-control" id="expDate" placeholder="2021-01-30">
       </div>
 
-      <input type="submit" value="Create Certification" class="button">
+      <button type="submit" class="btn btn-primary">Add Certification</button>
     </form>
 
 <br>
 
     <h3>Delete Certification</h3>
-    <form method="post" v-on:submit.prevent="deleteCert">
+    <form method="post" v-on:submit.prevent="deleteCert()">
       <div class="form-group">
         <label for="certificationID">Certification ID</label>
         <input type="integer" id="certificationID" name="certificationID" v-model="deleteCertForm.certificationID" required></input>
       </div>
             <!-- <button class="btn btn-lg btn-primary btn-block" type="submit">Submit</button> -->
-      <button type="submit" class="btn btn-primary">Delete</button>
+      <button type="submit" class="btn btn-primary">Delete Certification</button>
     </form>
 
 <br>
 
     <h3>Edit Certification</h3>
-    <form method="post" v-on:submit.prevent="editCert">
+    <form method="post" v-on:submit.prevent="editCert()">
         <div class="form-group">
             <label for="certificationID">Certification ID</label>
             <input type="integer" id="certificationID" name="certificationID" v-model="editCertForm.certificationID" required></input>
@@ -93,7 +105,7 @@
             <input type="integer" id="expDate" name="expDate" v-model="editCertForm.expDate" required></input>
             <br>
         </div>
-        <button type="submit" class="btn btn-primary">Update</button>
+        <button type="submit" class="btn btn-primary">Update Certification</button>
     </form>
 </div>
 </div>

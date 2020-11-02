@@ -1,7 +1,0 @@
-#Change the environment variables to their true values
-#Do NOT ever include your *real* env in version control
-
-MYSQL_DATABASE= ocfr-team3
-MYSQL_HOST= team3.cm57wmlsgxiy.us-east-1.rds.amazonaws.com
-MYSQL_USER= team3_admin
-MYSQL_PASSWORD= team3_2020
