@@ -38,32 +38,29 @@
             <p> <p/>
         <div class="container-fluid" id="memberReport2">
 
-              <table class="table table-bordered table-striped table-hover table-condensed">
+              <table id="myTable" class="table table-bordered table-striped table-hover table-condensed">
                 <thead>
                   <tr>
-                      <th class="headerSortDown">First Name</th>
-                      <th class="headerSortUp">Last Name</th>
-                      <th class="headerSortDown">Email Address</th>
-                      <th class="headerSortDown">Fire Station Number</th>
-                      <th class="headerSortUp">Radio Number</th>
+                    <th class="headerSortDown">First Name</th>
+                    <th class="headerSortUp">Last Name</th>
+                    <th class="headerSortDown">Email Address</th>
+                    <th class="headerSortDown">Fire Station Number</th>
+                    <th class="headerSortUp">Radio Number</th>
                   </tr>
               </thead>
 
               <tbody>
                 <tr class="reports2List" v-for="rt in reports2List">
-                    <td><span class="fname">{{reports2List.fname}}</span></td>
-                    <td><span class="lname">{{reports2List.lname}}</span></td>
-                    <td><span class="email">{{reports2List.email}}</span></td>
-                    <td><span class="stationNum">{{reports2List.stationNum}}</span></td>
-                    <td><span class="radioNum">{{reports2List.radioNum}}</span></td>
-                </tr>
-              </tbody>
-                     <tfoot>
-                     <tr>
-                         </tr>
-                     </tfoot>
-                  </table>
-              </div>
+                    <td><span class="fname">{{rt.fname}}</span></td>
+                    <td><span class="lname">{{rt.lname}}</span></td>
+                    <td><span class="email">{{rt.email}}</span></td>
+                    <td><span class="stationNum">{{rt.stationNum}}</span></td>
+                    <td><span class="radioNum">{{rt.radioNum}}</span></td>
+              </tr></tbody>
+               <tfoot>
+               <tr></tr>
+              </tfoot>
+             </table></div>
               <!-- END content -->
 
               <!-- Footer? Insert here -->

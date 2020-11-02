@@ -29,7 +29,7 @@ var reports2app = new Vue({
 
   methods: {
     fetchReports(){
-      fetch('api/reports/index.php')
+      fetch('api/reports/')
       .then( response => response.json() )
       .then( json => {
         this.reportsList = json;
