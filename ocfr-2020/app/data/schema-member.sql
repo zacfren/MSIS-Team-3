@@ -47,8 +47,8 @@ ENGINE=INNODB;
 
 SELECT * FROM person;
 SELECT * FROM certification;
-SELECT * FROM assignCertification;
+SELECT * FROM reports;
 
 DROP TABLE person;
 DROP TABLE certification;
-DROP TABLE assignCertification;
+DROP TABLE reports;
