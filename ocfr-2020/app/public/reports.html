@@ -33,7 +33,8 @@
     </div>
   </section>
     </nav>
-
+<h1>Reports</h1>
+<h3>Personnel by Station<h3>
 <div class="container-fluid">
   <table class="table table-bordered table-striped table-hover table-condensed">
     <thead>
@@ -57,6 +58,29 @@
   </table>
 </div>
 
+<!-- <h3>Certifications by Date<h3> NEED TO BE UPDATED!!! -->
+<div class="container-fluid">
+  <table class="table table-bordered table-striped table-hover table-condensed">
+    <thead>
+      <tr>
+        <th>Station</th>
+        <th>Radio Number</th>
+        <th>First Name</th>
+        <th>Last Name</th>
+        <th>Email</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr class="" v-for="pt in ptList">
+        <td><span class="stationNum">{{ pt.stationNum }}</span></td>
+        <td><span class="radioNum">{{ pt.radioNum }}</span></td>
+        <td><span class="fname">{{ pt.fname }}</span></td>
+        <td><span class="lname">{{ pt.lname }}</span></td>
+        <td><span class="email">{{ pt.email }}</span></td>
+      </tr>
+    </tbody>
+  </table>
+</div>
 
 
 
