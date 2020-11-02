@@ -114,8 +114,6 @@ nav img {
     margin-left:15px; */
     border:none;
     padding-top: 10px;
-    padding-bottom: 3px;
-    margin: 5px;
 }
 
 .dropdown {
@@ -135,7 +133,7 @@ nav img {
 
 .dropdown-content a {
     color: black;
-    padding: 12px 16px;
+    padding: 6px 10px;
     text-decoration: none;
     display: block;
 }
