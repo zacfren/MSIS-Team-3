@@ -120,6 +120,8 @@ nav img {
 .dropdown {
     position: relative;
     display: inline-block;
+    padding: 5px;
+    margin: 10px;
 }
 
 .dropdown-content {
