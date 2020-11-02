@@ -84,7 +84,7 @@ nav img {
     font-family: 'Viga', sans-serif;
     color: #2874A6;
     text-decoration: none;
-    margin-left:15px;
+    /* margin-left: 15px; */
 }
 
 .navsign:hover {
