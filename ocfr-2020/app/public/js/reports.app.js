@@ -1,32 +1,22 @@
 var memberReport = new Vue({
   el: '#memberReport',
   data: {
-    ptList: [],
-    certList: [],
-    choose: {
-      certification:''
-    }
-
+    reportsList: [],
+    activeReport: null,
     },
 
-    methods: {
-      fetchUser() {
-        fetch('api/reports/index.php')
+    methods:{
+      fetchUser(){
+        fetch('api/reports/')
         .then(response => response.json())
-        .then(json => { memberReport.ptList = json())
-        },
-
-    fetchCert(){
-      fetch('api/reports/filter.php')
-      .then(response => response.json())
-      .then(json => { memberReport.certList = json())
+        .then(json => {
+          this.reportsList=json;
+          console.log(this.reportsList);
+        });
       }
-
     },
-
 
   created(){
     this.fetchUser();
-    this.fetchCert();
-  }
+    this.fetchCert();  }
 });
