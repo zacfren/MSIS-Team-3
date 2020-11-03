@@ -35,8 +35,8 @@
 <h2>Report of all members whose selected certification is expired</h2>
 
               <div class="container-fluid" id="memberReport">
-                <table id="myTable" class="table table-bordered table-striped table-hover table-condensed">
-   <thead>
+    <table id="myTable" class="table table-bordered table-striped table-hover table-condensed">
+        <thead>
           <tr>
             <th class="headerSortDown">Employee ID</th>
             <th class="headerSortDown">First Name</th>
@@ -45,21 +45,21 @@
             <th class="headerSortUp">Certification</th>
             <th class="headerSortUp">Expiration Date</th>
           </tr>
-      </thead>
+        </thead>
            <tbody>
-               <tr class="reportsList" v-for="pt in ptList" v-for="c in certList">
-                 <td><span class="empID">{{pt.empID}}</span></td>
-                 <td><span class="fname">{{pt.fname}}</span></td>
-                 <td><span class="lname">{{pt.lname}}</span></td>
-                 <td><span class="certificationID">{{c.certificationID}}</span></td>
-                 <td><span class="certificationName">{{c.certificationName}}</span></td>
-                 <td><span class="expDate">{{c.expDate}}</span></td>
+               <tr class="reportsList" v-for="rp in reportsList">
+                 <td><span class="empID">{{rp.empID}}</span></td>
+                 <td><span class="fname">{{rp.fname}}</span></td>
+                 <td><span class="lname">{{rp.lname}}</span></td>
+                 <td><span class="certificationID">{{rp.certificationID}}</span></td>
+                 <td><span class="certificationName">{{rp.certificationName}}</span></td>
+                 <td><span class="expDate">{{rp.expDate}}</span></td>
                </tr>
             </tbody>
            <tfoot>
           <tr> </tr>
            </tfoot>
-                </table>
+    </table>
           </div>
 
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
