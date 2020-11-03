@@ -17,6 +17,19 @@ var app = new Vue({
 
     deleteCertForm: {},
     editCertForm: {},
+    computed: {
+  sortedArray: function() {
+    function compare(a, b) {
+      if (a.expDate < b.expDate)
+        return -1;
+      if (a.expDate > b.expDate)
+        return 1;
+      return 0;
+    }
+
+    return this.arrays.sort(compare);
+  }
+}
   },
 
 
