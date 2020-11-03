@@ -33,15 +33,13 @@
 
 
 <h2>Report of all members whose selected certification is expired</h2>
-<div class="container=fluid" id="memberReport">
+<div class="container-fluid" id="memberReport">
   <div class="certfilter">
     <select v-model="certFilter.certF">
       <option value="">Certification Name</option>
       <option v-for="r in reportsList">{{r.certificationName}}</option>
     </select>
   </div>
-</div>
-<div class="container-fluid" id="memberReport">
     <table id="myTable" class="sortable table table-bordered table-striped table-hover table-condensed">
         <thead>
           <tr>
