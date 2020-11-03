@@ -11,7 +11,7 @@ var reportsapp = new Vue({
       certificationName:''
     }],
     certFilter: {
-      filt: ''
+      certF: ''
     }
   },
 
