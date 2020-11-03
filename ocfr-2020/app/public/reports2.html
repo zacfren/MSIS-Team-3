@@ -34,7 +34,7 @@
 
 <h2>Report of members, organized by Station</h2>
             <p> <p/>
-        <div class="container-fluid" id="cardPaneLeft">
+        <div id="cardPaneLeft">
 
               <table id="myTable" class="table table-bordered table-striped table-hover table-condensed">
                 <thead>
@@ -49,17 +49,18 @@
 
               <tbody>
                 <tr v-for="pt in ptList" v-on:click="activePt = pt">
+  <td><span class="stationNum">{{pt.stationNum}}</span></td>
                     <td><span class="fname">{{pt.fname}}</span></td>
                     <td><span class="lname">{{pt.lname}}</span></td>
                     <td><span class="email">{{pt.email}}</span></td>
-                    <td><span class="stationNum">{{pt.stationNum}}</span></td>
+
                     <td><span class="radioNum">{{pt.radioNum}}</span></td>
               </tr></tbody>
                <tfoot>
                <tr></tr>
               </tfoot>
              </table></div>
-<script> new Tablesort(document.getElementById('myTable')); </script>
+            <script> new Tablesort(document.getElementById('myTable')); </script>
               <!-- END content -->
 
               <!-- Footer? Insert here -->
@@ -72,5 +73,8 @@
 
               <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
               <script src="js/members.app.js"></script>
+              <script src ="js/tablesort.min.js"> </script>
+              <script src="js/tablesort.number.js"></script>
+
             </body>
           </html>
