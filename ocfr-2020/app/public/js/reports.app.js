@@ -10,6 +10,9 @@ var reportsapp = new Vue({
       expDate:'',
       certificationName:''
     }],
+    certFilter: {
+      filt: ''
+    }
   },
 
   methods: {
