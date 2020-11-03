@@ -34,31 +34,32 @@
 
 <h2>Report of members, organized by Station</h2>
             <p> <p/>
-        <div class="container-fluid" id="memberReport2">
+        <div class="container-fluid" id="cardPaneLeft">
 
               <table id="myTable" class="table table-bordered table-striped table-hover table-condensed">
                 <thead>
                   <tr>
-                    <th class="headerSortDown">First Name</th>
-                    <th class="headerSortUp">Last Name</th>
-                    <th class="headerSortDown">Email Address</th>
-                    <th class="headerSortDown">Fire Station Number</th>
-                    <th class="headerSortUp">Radio Number</th>
+                    <th>First Name</th>
+                    <th>Last Name</th>
+                    <th>Email Address</th>
+                    <th>Fire Station Number</th>
+                    <th>Radio Number</th>
                   </tr>
               </thead>
 
               <tbody>
-                <tr class="reports2List" v-for="rt in reports2List">
-                    <td><span class="fname">{{rt.fname}}</span></td>
-                    <td><span class="lname">{{rt.lname}}</span></td>
-                    <td><span class="email">{{rt.email}}</span></td>
-                    <td><span class="stationNum">{{rt.stationNum}}</span></td>
-                    <td><span class="radioNum">{{rt.radioNum}}</span></td>
+                <tr v-for="pt in ptList" v-on:click="activePt = pt">
+                    <td><span class="fname">{{pt.fname}}</span></td>
+                    <td><span class="lname">{{pt.lname}}</span></td>
+                    <td><span class="email">{{pt.email}}</span></td>
+                    <td><span class="stationNum">{{pt.stationNum}}</span></td>
+                    <td><span class="radioNum">{{pt.radioNum}}</span></td>
               </tr></tbody>
                <tfoot>
                <tr></tr>
               </tfoot>
              </table></div>
+<script> new Tablesort(document.getElementById('myTable')); </script>
               <!-- END content -->
 
               <!-- Footer? Insert here -->
@@ -70,6 +71,6 @@
               <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
 
               <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
-              <script src="js/reports2.app.js"></script>
+              <script src="js/members.app.js"></script>
             </body>
           </html>

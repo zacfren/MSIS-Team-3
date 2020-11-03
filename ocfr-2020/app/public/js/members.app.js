@@ -21,6 +21,19 @@ var waitingApp = new Vue({
       },
       deletePtForm: {},
       editPtForm: {},
+      computed: {
+    sortedArray: function() {
+      function compare(a, b) {
+        if (a.stationNum < b.stationNum)
+          return -1;
+        if (a.stationNum > b.stationNum)
+          return 1;
+        return 0;
+      }
+
+      return this.arrays.sort(compare);
+    }
+  }
   },
   methods:{
     fetchUser(){
