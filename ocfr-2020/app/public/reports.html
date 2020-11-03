@@ -48,13 +48,13 @@
                       </tr>
                   </thead>
                        <tbody>
-                           <tr class="reportsList" v-for="rp in reportsList">
-                             <td><span class="empID">{{rp.empID}}</span></td>
-                             <td><span class="fname">{{rp.fname}}</span></td>
-                             <td><span class="lname">{{rp.lname}}</span></td>
-                             <td><span class="certificationID">{{rp.certificationID}}</span></td>
-                             <td><span class="certificationName">{{rp.certificationName}}</span></td>
-                             <td><span class="expDate">{{rp.expDate}}</span></td>
+                           <tr class="reportsList" v-for="pt in ptList" v-for="c in certList">
+                             <td><span class="empID">{{pt.empID}}</span></td>
+                             <td><span class="fname">{{pt.fname}}</span></td>
+                             <td><span class="lname">{{pt.lname}}</span></td>
+                             <td><span class="certificationID">{{c.certificationID}}</span></td>
+                             <td><span class="certificationName">{{c.certificationName}}</span></td>
+                             <td><span class="expDate">{{c.expDate}}</span></td>
                            </tr></tbody>
                        <tfoot>
                       <tr> </tr>
